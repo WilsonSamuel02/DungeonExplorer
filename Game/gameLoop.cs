@@ -7,7 +7,7 @@ namespace DungeonExplorer
     {
         public void Start()
         {
-            // Change the playing logic into true and populate the while loop
+            //controls the state of the game after certain events
             bool running = false;
             while (playing)
             {

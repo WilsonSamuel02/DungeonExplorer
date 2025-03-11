@@ -1,6 +1,10 @@
 namespace DungeonCrawler{
     public class StartRoom{
 
+        //temporary main room code
+        //The random elements make it easier to create multiple rooms
+        //In the future room presets would be implemented along with random elements
+
         private int _width;
         private int _length;
         private int _height;

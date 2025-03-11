@@ -5,6 +5,8 @@ namespace DungeonCrawler{
     public class Menu{
 
         public static int StartMenu(){
+            //main menu class that displays settings
+            
             int gameState;
             string? menuSelection = "N/A";
 

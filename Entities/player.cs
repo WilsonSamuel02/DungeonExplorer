@@ -5,6 +5,9 @@ namespace DungeonCrawler
 {
 
     public class Player : Entity {
+
+        //main player class
+
         private List<string> _inventory = new List<string>();
 
         public Player(){
@@ -27,6 +30,8 @@ namespace DungeonCrawler
         }
 
         public void AccessInventory(){
+            //allows the player to see what their inventory haas
+
             if (_inventory.Count <= 0){
                 Console.WriteLine("Inventory is Empty");
                 Console.WriteLine();
@@ -43,6 +48,9 @@ namespace DungeonCrawler
         }
 
         public void AccessStats(){
+
+            //allows the player to check their health, and in the future their mana, attack and defense stats
+
             Console.WriteLine("---- Stats ----");
             Console.WriteLine();
             Console.WriteLine($"HP: {_health}");
@@ -51,6 +59,8 @@ namespace DungeonCrawler
         }
 
         public List<string> PickupItem(string item){
+            //allows the player to add items to the list, will be later changed for better implementation
+            
             if (_inventory.Count < 5){
                 _inventory.Add(item);
             }

@@ -4,6 +4,8 @@ namespace DungeonCrawler{
 
     public abstract class Entity{
 
+        //main entity class that all entities (players and enemies) inherit from
+
         private string _name;
         private int _health;
         private int _maxHealth;
