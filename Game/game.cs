@@ -13,7 +13,7 @@ namespace DungeonCrawler{
 
             Console.WriteLine("Blah blah blah, story here, later.");
             Console.WriteLine("What would you like to name your warrior?");
-            string? playerName = Console.ReadLine();
+            string playerName = Console.ReadLine();
 
             Player player = new Player();
             
@@ -41,7 +41,7 @@ namespace DungeonCrawler{
                 Console.WriteLine("- Check 'Stats'");
                 Console.WriteLine("- 'Leave'");
                 Console.WriteLine();
-                string? userInput = Console.ReadLine();
+                string userInput = Console.ReadLine();
 
                 if (userInput != null){
                     if (userInput.ToLower() == "observe"){
@@ -80,7 +80,7 @@ namespace DungeonCrawler{
                 Console.WriteLine("- Access 'Inventory'");
                 Console.WriteLine("- Check 'Stats'");
                 Console.WriteLine("- 'Leave'");
-                string? userInput = Console.ReadLine();
+                string userInput = Console.ReadLine();
 
                 if (userInput != null){
                     if (userInput.ToLower() == "investigate"){
@@ -126,7 +126,7 @@ namespace DungeonCrawler{
                 Console.WriteLine();
                 Console.WriteLine("- 'Pick up' the sword");
                 Console.WriteLine("- 'Leave' the sword behind");
-                string? userInput = Console.ReadLine();
+                string userInput = Console.ReadLine();
 
                 if (userInput != null){
                     if (userInput.ToLower() == "pick up"){
@@ -156,7 +156,7 @@ namespace DungeonCrawler{
                 Console.WriteLine("- Access 'Inventory'");
                 Console.WriteLine("- Check 'Stats'");
                 Console.WriteLine("- 'Leave'");
-                string? userInput = Console.ReadLine();
+                string userInput = Console.ReadLine();
 
                 if (userInput != null){
                     if (userInput.ToLower() == "next room"){

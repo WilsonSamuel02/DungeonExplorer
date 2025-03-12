@@ -1,5 +1,5 @@
 using System;
-using System.Text;
+using System.Collections.Generic;
 
 namespace DungeonCrawler
 {
@@ -12,7 +12,7 @@ namespace DungeonCrawler
 
         public Player(){
             Name = "Empty Name";
-            this._inventory = [];
+            this._inventory = new List<string>();
             Health = 10;
             MaxHealth = 10;
         }
@@ -21,7 +21,7 @@ namespace DungeonCrawler
             Name = name;
             this._inventory = inventory;
             Health = health;
-            maxHealth = maxHealth;
+            MaxHealth = maxHealth;
         }
 
         public List<string> Inventory{
@@ -53,7 +53,7 @@ namespace DungeonCrawler
 
             Console.WriteLine("---- Stats ----");
             Console.WriteLine();
-            Console.WriteLine($"HP: {_health}");
+            Console.WriteLine($"HP: {Health}");
             Console.WriteLine();
             Console.WriteLine("---------------");
         }
