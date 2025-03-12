@@ -1,15 +1,18 @@
 using System;
-using System.Text;
+using System.Collections.Generic;
 
 namespace DungeonCrawler
 {
 
     public class Player : Entity {
+
+        //main player class
+
         private List<string> _inventory = new List<string>();
 
         public Player(){
             Name = "Empty Name";
-            this._inventory = [];
+            this._inventory = new List<string>();
             Health = 10;
             MaxHealth = 10;
         }
@@ -18,7 +21,7 @@ namespace DungeonCrawler
             Name = name;
             this._inventory = inventory;
             Health = health;
-            maxHealth = maxHealth;
+            MaxHealth = maxHealth;
         }
 
         public List<string> Inventory{
@@ -27,6 +30,8 @@ namespace DungeonCrawler
         }
 
         public void AccessInventory(){
+            //allows the player to see what their inventory haas
+
             if (_inventory.Count <= 0){
                 Console.WriteLine("Inventory is Empty");
                 Console.WriteLine();
@@ -43,14 +48,19 @@ namespace DungeonCrawler
         }
 
         public void AccessStats(){
+
+            //allows the player to check their health, and in the future their mana, attack and defense stats
+
             Console.WriteLine("---- Stats ----");
             Console.WriteLine();
-            Console.WriteLine($"HP: {_health}");
+            Console.WriteLine($"HP: {Health}");
             Console.WriteLine();
             Console.WriteLine("---------------");
         }
 
         public List<string> PickupItem(string item){
+            //allows the player to add items to the list, will be later changed for better implementation
+            
             if (_inventory.Count < 5){
                 _inventory.Add(item);
             }

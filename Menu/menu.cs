@@ -5,8 +5,10 @@ namespace DungeonCrawler{
     public class Menu{
 
         public static int StartMenu(){
+            //main menu class that displays settings
+            
             int gameState;
-            string? menuSelection = "N/A";
+            string menuSelection = "N/A";
 
             while (true){
                 Console.WriteLine();
@@ -66,7 +68,7 @@ namespace DungeonCrawler{
                 Console.WriteLine();
 
                 Console.WriteLine("Would you like to try again? (y/n)");
-                string? userInput = Console.ReadLine();
+                string userInput = Console.ReadLine();
 
                 if (userInput != null){
                     if (userInput.ToLower() == "y"){

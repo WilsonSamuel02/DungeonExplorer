@@ -1,15 +1,17 @@
-﻿using System;
+﻿using DungeonCrawler;
+using System;
 using System.Media;
 
 namespace DungeonExplorer
 {
     internal class GameLoop
     {
+        private int gameState;
         public void Start()
         {
-            // Change the playing logic into true and populate the while loop
-            bool running = false;
-            while (playing)
+            //controls the state of the game after certain events
+            bool running = true;
+            while (running)
             {
                 if (gameState == (int)States.START_MENU){
                     gameState = Menu.StartMenu();
