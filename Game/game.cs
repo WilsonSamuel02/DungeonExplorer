@@ -2,7 +2,7 @@ using System;
 
 namespace DungeonCrawler{
 
-    public class Game{
+    public class Game {
         //main game class
         //It is split from game logic as it provides a more organised game logic
         //In the future the text will be in a different class so that it is much cleaner and would be easier to add more methods and easier to implement
@@ -11,26 +11,33 @@ namespace DungeonCrawler{
 
             int gameState;
 
-            Console.WriteLine("Blah blah blah, story here, later.");
-            Console.WriteLine("What would you like to name your warrior?");
-            string playerName = Console.ReadLine();
-
             Player player = new Player();
-            
-            if (playerName != null){
-                player.Name = playerName;
-            }
-            
-            
-
-            Console.WriteLine($"Welcome to Kendryl {player.Name}!");
-            Console.WriteLine("Blah blah blah, more story here!");
-            Console.WriteLine("Blah blah blah, you're in a dungeon now");
-            Console.WriteLine();
-
             StartRoom startRoom = new StartRoom();
 
+            Console.WriteLine("Blah blah blah, story here, later.");
+
+            while (true)
+            {
+                Console.WriteLine("What would you like to name your warrior?");
+                string playerName = Console.ReadLine();
+
+                if (playerName.Length > 0)
+                {
+                    player.Name = playerName;
+                    break;
+                }
+                else
+                {
+                    Console.WriteLine("Please input a name before going forward!");
+                }
+            }
+
             while (true){
+
+                Console.WriteLine($"Welcome to Kendryl {player.Name}!");
+                Console.WriteLine("Blah blah blah, more story here!");
+                Console.WriteLine("Blah blah blah, you're in a dungeon now");
+                Console.WriteLine();
 
                 Console.WriteLine("To select an option please type the words only in quotation marks (i.e. '')");
                 Console.WriteLine();
@@ -43,7 +50,7 @@ namespace DungeonCrawler{
                 Console.WriteLine();
                 string userInput = Console.ReadLine();
 
-                if (userInput != null){
+                if (userInput.Length > 0){
                     if (userInput.ToLower() == "observe"){
                         startRoom.GetDescription();
                         break;
@@ -56,9 +63,7 @@ namespace DungeonCrawler{
                     }
                     else if (userInput.ToLower() == "leave"){
                         Console.WriteLine("You decided to leave and live another day!");
-                        gameState = (int)States.EXIT_MENU;
-
-                        return gameState;
+                        Environment.Exit(0);
                     }
                     else{
                         Console.WriteLine("That is not an option!");
@@ -82,7 +87,7 @@ namespace DungeonCrawler{
                 Console.WriteLine("- 'Leave'");
                 string userInput = Console.ReadLine();
 
-                if (userInput != null){
+                if (userInput.Length > 0){
                     if (userInput.ToLower() == "investigate"){
                     break;
                     }
@@ -128,7 +133,7 @@ namespace DungeonCrawler{
                 Console.WriteLine("- 'Leave' the sword behind");
                 string userInput = Console.ReadLine();
 
-                if (userInput != null){
+                if (userInput.Length > 0){
                     if (userInput.ToLower() == "pick up"){
                         player.PickupItem("Damaged Silver Sword");
                         Console.WriteLine("You pick up the Damaged Silver Sword and add it to you inventory");
@@ -158,7 +163,7 @@ namespace DungeonCrawler{
                 Console.WriteLine("- 'Leave'");
                 string userInput = Console.ReadLine();
 
-                if (userInput != null){
+                if (userInput.Length > 0){
                     if (userInput.ToLower() == "next room"){
                         Console.WriteLine("You decide to open the creaky heavy door.");
                         gameState = (int)States.WIN_MENU;

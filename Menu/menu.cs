@@ -24,14 +24,13 @@ namespace DungeonCrawler{
                 Console.WriteLine("Where would you like to go?");
                 menuSelection = Console.ReadLine();
 
-                if (menuSelection != null){
+                if (menuSelection.Length > 0){
                     if (menuSelection.ToLower() == "start game"){
                     gameState = (int)States.PLAY_GAME;
                     break;
                     }
                     else if (menuSelection.ToLower() == "quit"){
-                        gameState = (int)States.EXIT_MENU;
-                        break;
+                        Environment.Exit(0);
                     }
                     else{
                         Console.WriteLine("That is not an option!");
@@ -70,7 +69,7 @@ namespace DungeonCrawler{
                 Console.WriteLine("Would you like to try again? (y/n)");
                 string userInput = Console.ReadLine();
 
-                if (userInput != null){
+                if (userInput.Length > 0){
                     if (userInput.ToLower() == "y"){
                     gameState = (int)States.START_MENU;
                     break;

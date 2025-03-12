@@ -13,28 +13,22 @@ namespace DungeonExplorer
             bool running = true;
             while (running)
             {
-                if (gameState == (int)States.START_MENU){
-                    gameState = Menu.StartMenu();
-                }
-                else if (gameState == (int)States.PLAY_GAME){
-                    gameState = Game.Play();
-                }
-                else if (gameState == (int)States.WIN_MENU){
-                    Menu.WinMenu();
-                    running = false;
-                }
-                else if (gameState == (int)States.GAME_OVER){
-                    gameState = Menu.GameOver();
-                }
-                else if (gameState == (int)States.EXIT_MENU){
-                    Menu.ExitMenu();
-                    running = false;
-                }
-                else{
-                    Console.WriteLine("Bye bye!");
-                    Console.WriteLine("Press any key...");
-                    Console.Read();
-                    running = false;
+                switch (gameState)
+                {
+                    case 0:
+                        gameState = Menu.StartMenu();
+                        break;
+                    case 1:
+                        gameState = Game.Play();
+                        break;
+                    case 2:
+                        Menu.WinMenu();
+                        running = false;
+                        break;
+                    case 3:
+                        gameState = Menu.GameOver();
+                        running = false;
+                        break;
                 }
             }
         }
