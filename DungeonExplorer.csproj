@@ -43,7 +43,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Entities\CombatClass.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Entities\entity.cs" />
     <Compile Include="Entities\player.cs" />

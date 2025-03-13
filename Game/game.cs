@@ -18,29 +18,6 @@ namespace DungeonCrawler{
 
             while (true)
             {
-                Console.WriteLine();
-                Console.WriteLine("What class would you like to be?");
-                Console.WriteLine("- Barbarian");
-                Console.WriteLine("- Paladin");
-                Console.WriteLine("- Mage");
-                Console.WriteLine("- Ranger");
-                string combatClass = Console.ReadLine();
-
-                if (combatClass.ToLower() == "barbarian" || combatClass.ToLower() == "paladin" || combatClass.ToLower() == "mage" || combatClass.ToLower() == "ranger"){
-                    player.CombatClassId = combatClass;
-                    break;
-                }
-                else
-                {
-                    Console.WriteLine();
-                    Console.WriteLine("That is not an option");
-                    Console.WriteLine("Please try again!");
-                }
-
-            }
-
-            while (true)
-            {
                 Console.WriteLine("What would you like to name your warrior?");
                 string playerName = Console.ReadLine();
 

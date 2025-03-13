@@ -1,4 +1,3 @@
-using DungeonExplorer.Entities;
 using System;
 using System.Collections.Generic;
 
@@ -12,10 +11,9 @@ namespace DungeonCrawler
     /// This player class inherits from the Entity class, setting the players name and other variables as needed.
     /// It is also house to certain player specific methods, such as "AccessInventory", "AccessStats", etc.
     /// </remarks>
-    internal class Player : CombatClass {
+    internal class Player : Entity {
 
         private List<string> _inventory;
-        private int[] classStats = new int[9];
 
         /// <summary>
         /// Empty player constructor.
@@ -26,8 +24,15 @@ namespace DungeonCrawler
         public Player(){
             Name = "Empty Name";
             this._inventory = new List<string>();
-            CombatClassId = "No class";
-            CombatClassSelection(CombatClassId);
+            Health = 10;
+            MaxHealth = 10;
+            Mana = 10;
+            MaxMana = 10;
+            Attack = 10;
+            MagicAttack = 5;
+            Defense = 5;
+            MagicDefense = 0;
+            Dexterity = 5;
         }
 
         /// <summary>
@@ -41,14 +46,25 @@ namespace DungeonCrawler
         /// <param name="inventory">Temporary empty list being used as a player inventory.</param>
         /// <param name="health">Player's current health.</param>
         /// <param name="maxHealth">Maximum health the player can reach.</param>
-        public Player(string name, List<string> inventory, int health = 10, int maxHealth = 10, int attack = 5, int defense = 5, int mana = 20){
+        /// <param name="mana">The player mana.</param>
+        /// <param name="maxMana">Max mana playe can have.</param>
+        /// <param name="attack">Attack power of the player.</param>
+        /// <param name="magicAttack">Magic attack of the player.</param>
+        /// <param name="defense">Defense of the player.</param>
+        /// <param name="magicDefence">Magic defense of the player.</param>
+        /// <param name="dexterity">Dexterity of the player.</param>
+        public Player(string name, List<string> inventory, int health = 10, int maxHealth = 10, int attack = 5, int magicAttack = 5, int defense = 5, int magicDefence = 0, int mana = 10, int maxMana = 10, int dexterity = 5){
             Name = name;
             this._inventory = inventory;
             Health = health;
             MaxHealth = maxHealth;
+            Mana= mana;
+            MaxMana= maxMana;
             Attack = attack; 
+            MagicAttack = magicAttack;
             Defense = defense;
-            Mana = mana;
+            MagicDefense = magicDefence;
+            Dexterity = dexterity;
         }
 
         public List<string> Inventory
