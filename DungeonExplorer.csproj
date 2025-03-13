@@ -43,11 +43,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Game.cs" />
-    <Compile Include="Player.cs" />
     <Compile Include="Program.cs" />
+    <Compile Include="Entities\entity.cs" />
+    <Compile Include="Entities\player.cs" />
+    <Compile Include="Game\game.cs" />
+    <Compile Include="Game\gameLoop.cs" />
+    <Compile Include="Game\gameStates.cs" />
+    <Compile Include="Menu\menu.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Room.cs" />
+    <Compile Include="Rooms\startRoom.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
