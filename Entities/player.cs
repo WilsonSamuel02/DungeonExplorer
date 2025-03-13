@@ -4,12 +4,23 @@ using System.Collections.Generic;
 namespace DungeonCrawler
 {
 
+    /// <summary>
+    /// Main player class.
+    /// </summary>
+    /// <remarks>
+    /// This player class inherits from the Entity class, setting the players name and other variables as needed.
+    /// It is also house to certain player specific methods, such as "AccessInventory", "AccessStats", etc.
+    /// </remarks>
     public class Player : Entity {
 
-        //main player class
+        public List<string> Inventory { get; set; }
 
-        private List<string> _inventory = new List<string>();
-
+        /// <summary>
+        /// Empty player constructor.
+        /// </summary>
+        /// <remarks>
+        /// This empty player constructor is the base of the player class, assigning temporary variables as place holders.
+        /// </remarks>
         public Player(){
             Name = "Empty Name";
             this._inventory = new List<string>();
@@ -17,6 +28,17 @@ namespace DungeonCrawler
             MaxHealth = 10;
         }
 
+        /// <summary>
+        /// Player constructor with modifiable parameters.
+        /// </summary>
+        /// <remarks>
+        /// This is a modifiable player constructor, which, in the future, will be used to add certain elements manually.
+        /// This same constructor will be used in the enemy class for randomising their inventory and allowing them to level up over the course of the game.
+        /// </remarks>
+        /// <param name="name">Player name that is assigned at the start of the game.</param>
+        /// <param name="inventory">Temporary empty list being used as a player inventory.</param>
+        /// <param name="health">Player's current health.</param>
+        /// <param name="maxHealth">Maximum health the player can reach.</param>
         public Player(string name, List<string> inventory, int health = 10, int maxHealth = 10){
             Name = name;
             this._inventory = inventory;
@@ -24,13 +46,16 @@ namespace DungeonCrawler
             MaxHealth = maxHealth;
         }
 
-        public List<string> Inventory{
-            get { return _inventory; }
-            set { _inventory = value; }
-        }
-
+        /// <summary>
+        /// Allows the player to access inventory
+        /// </summary>
+        /// <remarks>
+        /// Adds a simple string considered as an "item" that the player can check whenever.
+        /// It first checks if the list is empty.
+        /// If not then each element in the list is looped over and displayed for the player.
+        /// In the future, this method will expand to allow each item to be characterised differently for better control of their functions.
+        /// </remarks>
         public void AccessInventory(){
-            //allows the player to see what their inventory haas
 
             if (_inventory.Count <= 0){
                 Console.WriteLine("Inventory is Empty");
