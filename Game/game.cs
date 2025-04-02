@@ -11,19 +11,21 @@ namespace DungeonCrawler{
 
             int gameState;
 
-            Player player = new Player();
+            string playerName;
+            string combatClass;
+
             StartRoom startRoom = new StartRoom();
 
             Console.WriteLine("Blah blah blah, story here, later.");
 
             while (true)
             {
+                Console.WriteLine();
                 Console.WriteLine("What would you like to name your warrior?");
-                string playerName = Console.ReadLine();
+                playerName = Console.ReadLine();
 
                 if (playerName.Length > 0)
                 {
-                    player.Name = playerName;
                     break;
                 }
                 else
@@ -31,6 +33,37 @@ namespace DungeonCrawler{
                     Console.WriteLine("Please input a name before going forward!");
                 }
             }
+
+            while (true)
+            {
+                Console.WriteLine();
+                Console.WriteLine("What class would you like your warrior to be?");
+                Console.WriteLine("- Artificer");
+                Console.WriteLine("- Barbarian");
+                Console.WriteLine("- Bard");
+                Console.WriteLine("- Cleric");
+                Console.WriteLine("- Druid");
+                Console.WriteLine("- Fighter");
+                Console.WriteLine("- Monk");
+                Console.WriteLine("- Paladin");
+                Console.WriteLine("- Ranger");
+                Console.WriteLine("- Rogue");
+                Console.WriteLine("- Sorcerer");
+                Console.WriteLine("- Warlock");
+                Console.WriteLine("- Wizard");
+                combatClass = Console.ReadLine();
+
+                if(combatClass.Length > 0)
+                {
+                    break;
+                }
+                else
+                {
+                    Console.WriteLine("Please select a class before going forward!");
+                }
+            }
+
+            Player player = new Player(playerName, combatClass);
 
             while (true){
 

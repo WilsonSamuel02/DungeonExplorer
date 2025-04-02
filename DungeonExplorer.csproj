@@ -43,9 +43,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Entities\CombatClass.cs" />
+    <Compile Include="Entities\CombatClasses\BarbarianAbility.cs" />
+    <Compile Include="Entities\CombatClasses\IHealth.cs" />
+    <Compile Include="Entities\CombatClasses\Traits.cs" />
+    <Compile Include="Entities\Species.cs" />
     <Compile Include="Program.cs" />
-    <Compile Include="Entities\entity.cs" />
-    <Compile Include="Entities\player.cs" />
+    <Compile Include="Entities\Entity.cs" />
+    <Compile Include="Entities\Player.cs" />
     <Compile Include="Game\game.cs" />
     <Compile Include="Game\gameLoop.cs" />
     <Compile Include="Game\gameStates.cs" />

@@ -1,3 +1,4 @@
+using DungeonExplorer.Entities.CombatClasses;
 using System;
 using System.Collections.Generic;
 
@@ -11,9 +12,10 @@ namespace DungeonCrawler
     /// This player class inherits from the Entity class, setting the players name and other variables as needed.
     /// It is also house to certain player specific methods, such as "AccessInventory", "AccessStats", etc.
     /// </remarks>
-    internal class Player : Entity {
+    internal class Player : CombatClass, IHealth {
 
         private List<string> _inventory;
+        private List<> _traits;
 
         /// <summary>
         /// Empty player constructor.
@@ -24,53 +26,30 @@ namespace DungeonCrawler
         public Player(){
             Name = "Empty Name";
             this._inventory = new List<string>();
-            Health = 10;
-            MaxHealth = 10;
-            Mana = 10;
-            MaxMana = 10;
-            Attack = 10;
-            MagicAttack = 5;
-            Defense = 5;
-            MagicDefense = 0;
-            Dexterity = 5;
         }
 
-        /// <summary>
-        /// Player constructor with modifiable parameters.
-        /// </summary>
-        /// <remarks>
-        /// This is a modifiable player constructor, which, in the future, will be used to add certain elements manually.
-        /// This same constructor will be used in the enemy class for randomising their inventory and allowing them to level up over the course of the game.
-        /// </remarks>
-        /// <param name="name">Player name that is assigned at the start of the game.</param>
-        /// <param name="inventory">Temporary empty list being used as a player inventory.</param>
-        /// <param name="health">Player's current health.</param>
-        /// <param name="maxHealth">Maximum health the player can reach.</param>
-        /// <param name="mana">The player mana.</param>
-        /// <param name="maxMana">Max mana playe can have.</param>
-        /// <param name="attack">Attack power of the player.</param>
-        /// <param name="magicAttack">Magic attack of the player.</param>
-        /// <param name="defense">Defense of the player.</param>
-        /// <param name="magicDefence">Magic defense of the player.</param>
-        /// <param name="dexterity">Dexterity of the player.</param>
-        public Player(string name, List<string> inventory, int health = 10, int maxHealth = 10, int attack = 5, int magicAttack = 5, int defense = 5, int magicDefence = 0, int mana = 10, int maxMana = 10, int dexterity = 5){
+        public Player(string name, string combatClass)
+        {
             Name = name;
-            this._inventory = inventory;
-            Health = health;
-            MaxHealth = maxHealth;
-            Mana= mana;
-            MaxMana= maxMana;
-            Attack = attack; 
-            MagicAttack = magicAttack;
-            Defense = defense;
-            MagicDefense = magicDefence;
-            Dexterity = dexterity;
+            ClassSelection(combatClass);
+
+            this._inventory = new List<string>();
         }
 
         public List<string> Inventory
         {
             get { return _inventory; }
             set { _inventory = value; }
+        }
+
+        public void TakeDamage(int damageAmount)
+        {
+            base.Health -= damageAmount;
+        }
+
+        public void Heal(int healAmount)
+        {
+            base.Health += healAmount;
         }
 
         /// <summary>
@@ -85,17 +64,18 @@ namespace DungeonCrawler
         public void AccessInventory(){
 
             if (_inventory.Count <= 0){
-                Console.WriteLine("Inventory is Empty");
+
                 Console.WriteLine();
+                Console.WriteLine("Inventory is Empty");
             }
             else{
+                Console.WriteLine();
                 Console.WriteLine("---- Inventory ----");
 
                 for (int i = 0; i < _inventory.Count; i++){
                     Console.WriteLine($"- {_inventory[i]}");
                 }
                 Console.WriteLine("-------------------");
-                Console.WriteLine();
             }
         }
 
@@ -108,15 +88,18 @@ namespace DungeonCrawler
         /// </remarks>
         public void AccessStats(){
 
+            Console.WriteLine();
             Console.WriteLine("---- Stats ----");
             Console.WriteLine();
-            Console.WriteLine($"HP: {Health}");
-            Console.WriteLine($"MP: {Mana}");
-            Console.WriteLine($"Attack: {Attack}");
-            Console.WriteLine($"Magic Attack: {MagicAttack}");
-            Console.WriteLine($"Defense: {Defense}");
-            Console.WriteLine($"Magic Defense: {MagicDefense}");
-            Console.WriteLine($"Dexterity: {Dexterity}");
+            Console.WriteLine($"HP: {base.Health}");
+            Console.WriteLine($"MP: {base.Mana}");
+            Console.WriteLine($"Armour: {base.Armour}");
+            Console.WriteLine($"Strength: {base.Strength}");
+            Console.WriteLine($"Dexterity: {base.Dexterity}");
+            Console.WriteLine($"Intelligence: {base.Intelligence}");
+            Console.WriteLine($"Constitution: { Constitution}");
+            Console.WriteLine($"Wisdom: {base.Wisdom}");
+            Console.WriteLine($"Charisma: {base.Charisma}");
             Console.WriteLine();
             Console.WriteLine("---------------");
         }
