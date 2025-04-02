@@ -14,7 +14,6 @@ namespace DungeonCrawler
     internal class Player : CombatClass, IHealth {
 
         private List<string> _inventory;
-        private List<> _traits;
 
         /// <summary>
         /// Empty player constructor.

@@ -43,14 +43,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Entities\CombatClass.cs" />
+    <Compile Include="Entities\CombatClasses\CombatClass.cs" />
     <Compile Include="Entities\CombatClasses\BarbarianAbility.cs" />
-    <Compile Include="Entities\CombatClasses\IHealth.cs" />
-    <Compile Include="Entities\CombatClasses\Traits.cs" />
-    <Compile Include="Entities\Species.cs" />
+    <Compile Include="Entities\Enemies\Bosses\Bosses.cs" />
+    <Compile Include="Entities\Entity Features\IHealth.cs" />
+    <Compile Include="Entities\Entity Features\Traits.cs" />
+    <Compile Include="Entities\Entity Features\Species.cs" />
+    <Compile Include="Entities\Main Entities\Enemy.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Entities\Entity.cs" />
-    <Compile Include="Entities\Player.cs" />
+    <Compile Include="Entities\Main Entities\Player.cs" />
     <Compile Include="Game\game.cs" />
     <Compile Include="Game\gameLoop.cs" />
     <Compile Include="Game\gameStates.cs" />
@@ -60,6 +62,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Game\Music\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
