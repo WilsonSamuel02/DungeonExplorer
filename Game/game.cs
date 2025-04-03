@@ -14,7 +14,8 @@ namespace DungeonCrawler{
             string playerName;
             string combatClass;
 
-            StartRoom startRoom = new StartRoom();
+            Map map = new Map();
+            StartRoom startRoom = map.startRoom;
 
             Console.WriteLine("Blah blah blah, story here, later.");
 
@@ -63,7 +64,7 @@ namespace DungeonCrawler{
                 }
             }
 
-            Player player = new Player(playerName, combatClass);
+            Player player = new Player(playerName, combatClass, map.GetStartCoordinates(startRoom.Width, startRoom.Length));
 
             while (true){
 
@@ -77,6 +78,7 @@ namespace DungeonCrawler{
                 Console.WriteLine("What would you like to do?");
                 Console.WriteLine();
                 Console.WriteLine("- 'Observe' the room");
+                Console.WriteLine("- Get own 'description'")
                 Console.WriteLine("- Access 'Inventory'");
                 Console.WriteLine("- Check 'Stats'");
                 Console.WriteLine("- 'Leave'");
@@ -84,17 +86,25 @@ namespace DungeonCrawler{
                 string userInput = Console.ReadLine();
 
                 if (userInput.Length > 0){
-                    if (userInput.ToLower() == "observe"){
+                    if (userInput.ToLower() == "observe")
+                    {
                         startRoom.GetDescription();
                         break;
                     }
-                    else if (userInput.ToLower() == "inventory"){
+                    else if (userInput.ToLower() == "description")
+                    {
+                        player.GetDescription();
+                    }
+                    else if (userInput.ToLower() == "inventory")
+                    {
                         player.AccessInventory();
                     }
-                    else if (userInput.ToLower() == "stats"){
+                    else if (userInput.ToLower() == "stats")
+                    {
                         player.AccessStats();
                     }
-                    else if (userInput.ToLower() == "leave"){
+                    else if (userInput.ToLower() == "leave")
+                    {
                         Console.WriteLine("You decided to leave and live another day!");
                         Environment.Exit(0);
                     }

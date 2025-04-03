@@ -11,9 +11,12 @@ namespace DungeonCrawler
     /// This player class inherits from the Entity class, setting the players name and other variables as needed.
     /// It is also house to certain player specific methods, such as "AccessInventory", "AccessStats", etc.
     /// </remarks>
-    internal class Player : CombatClass, IHealth {
+    internal class Player : Entity, IHealth 
+    {
 
         private List<string> _inventory;
+        private CombatClass _combatClass = new CombatClass();
+        private Species _species = new Species();
 
         /// <summary>
         /// Empty player constructor.
@@ -29,13 +32,16 @@ namespace DungeonCrawler
             this._inventory = new List<string>();
         }
 
-        public Player(string name, string combatClass)
+        public Player(string name, string combatClass, string species, List<int> currentCoordinates)
         {
-            Name = name;
-            Level = 1;
-            XP = 0;
-            Gold = 10;
-            ClassSelection(combatClass);
+            base.Name = name;
+            base.Level = 1;
+            base.XP = 0;
+            base.Gold = 10;
+            base.CombatClass = combatClass
+            CurrentCoordinates = currentCoordinates;
+            _combatClass.ClassSelection(combatClass);
+            _species.SpeciesSelection(species)
 
             this._inventory = new List<string>();
         }
@@ -75,6 +81,8 @@ namespace DungeonCrawler
             else{
                 Console.WriteLine();
                 Console.WriteLine("---- Inventory ----");
+                Console.WriteLine();
+                Console.WriteLine($"Gold: {base.Gold}")
 
                 for (int i = 0; i < _inventory.Count; i++){
                     Console.WriteLine($"- {_inventory[i]}");
@@ -105,6 +113,20 @@ namespace DungeonCrawler
             Console.WriteLine($"Charisma: {base.Charisma}");
             Console.WriteLine();
             Console.WriteLine("---------------");
+        }
+
+        public void GetDescription()
+        {
+            Console.WriteLine();
+            Console.WriteLine($"---- {base.Name} ----");
+            Console.WriteLine();
+            Console.WriteLine($"Level: {base.Level}");
+            Console.WriteLine($"Class: {base.CombatClass}");
+            Console.WriteLine($"Species: {base.Species}");
+            Console.WriteLine($"Size: {base.Size}");
+            Console.WriteLine($"Speed: {base.Speed}");
+            Console.WriteLine();
+            Console.WriteLine("----------------------");
         }
 
         /// <summary>

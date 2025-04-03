@@ -6,20 +6,74 @@ using System.Threading.Tasks;
 
 namespace DungeonCrawler
 {
-    internal enum Species
+    internal class Species : Entity
     {
-        DWARF,
-        ELF,
-        HALFLING,
-        HUMAN,
-        DRAGONBORN,
-        GNOME,
-        GOLIATH,
-        ORC,
-        TIEFLING,
-        CHANGELING,
-        SHIFTER,
-        WARFORGED
+        public void SpeciesSelection(string speciesName)
+        {
+            switch (speciesName.ToLower())
+            {
+                case "dwarf":
+                    base.Species = "Dwarf";
+                    base.Size = "medium";
+                    base.Speed = 30;
+                    break;
+                case "elf":
+                    base.Species = "Elf";
+                    base.Size = "medium";
+                    base.Speed = 30;
+                    break;
+                case "halfling":
+                    base.Species = "Halfling";
+                    base.Size = "small";
+                    base.Speed = 30;
+                    break;
+                case "human":
+                    base.Species = "Human";
+                    base.Size = "medium";
+                    base.Speed = 30;
+                    break;
+                case "dragonborn":
+                    base.Species = "Dragonborn";
+                    base.Size = "medium";
+                    base.Speed = 30;
+                    break;
+                case "gnome":
+                    base.Species = "Gnome";
+                    base.Size = "small";
+                    base.Speed = 25;
+                    break;
+                case "goliath":
+                    base.Species = "Goliath";
+                    base.Size = "medium";
+                    base.Speed = 30;
+                    break;
+                case "orc":
+                    base.Species = "Orc";
+                    base.Size = "medium";
+                    base.Speed = 30;
+                    break;
+                case "tiefling":
+                    base.Species = "Tiefling";
+                    base.Size = "medium";
+                    base.Speed = 30;
+                    break;
+                case "changeling":
+                    base.Species = "Changeling";
+                    base.Size = "small";
+                    base.Speed = 30;
+                    break;
+                case "shifter":
+                    base.Species = "Shifter";
+                    base.Size = "medium";
+                    base.Speed = 30;
+                    break;
+                case "warforged":
+                    base.Species = "Warforged";
+                    base.Size = "medium";
+                    base.Speed = 30;
+                    break;
+            }
+        }
     }
 
     internal enum DragonSpecies

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DungeonCrawler
 {
-    internal abstract class CombatClass : Entity
+    internal class CombatClass : Entity
     {
         protected void ClassSelection(string combatClass)
         {
@@ -14,7 +14,7 @@ namespace DungeonCrawler
             {
                 case "artificer":
                     base.Health = 10;
-                    base.MaxHealth = 10;
+                    base.MaxHealth = 10; 
                     base.Armour = 11;
                     base.Strength = 14;
                     base.Dexterity = 13;
@@ -24,15 +24,7 @@ namespace DungeonCrawler
                     base.Charisma = 8;
                     break;
                 case "barbarian":
-                    base.Health = 12;
-                    base.MaxHealth = 12;
-                    base.Armour = 10;
-                    base.Strength = 15;
-                    base.Dexterity = 10;
-                    base.Intelligence = 12;
-                    base.Constitution = 14;
-                    base.Wisdom = 8;
-                    base.Charisma = 13;
+                    Barbarian.SetAbilityScore();
                     break;
                 case "bard":
                     base.Health = 11;

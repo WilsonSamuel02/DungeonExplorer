@@ -7,17 +7,17 @@ namespace DungeonCrawler{
         //The random elements make it easier to create multiple rooms
         //In the future room presets would be implemented along with random elements
 
-        private int _width;
-        private int _length;
-        private int _height;
+        public int Width { get; private set; }
+        public int Length { get; private set; }
+        public int Height { get; private set; }
         private string _lightLevel;
         private string _wallMaterial;
         private string _floorMaterial;
 
         public StartRoom(){
-            this._width = RandomNumber();
-            this._length = RandomNumber();
-            this._height = RandomNumber();
+            this.Width = RandomNumber();
+            this.Length = RandomNumber();
+            this.Height = RandomNumber();
             this._lightLevel = RandomLight();
             this._wallMaterial = RandomMaterial();
             this._floorMaterial = RandomMaterial();
@@ -34,9 +34,10 @@ namespace DungeonCrawler{
         private static int RandomNumber(){
             Random ranInt = new Random();
 
-            int ran = ranInt.Next(2, 6);
+            int ran = ranInt.Next(3, 15);
 
-            return ran;
+            if (ran % 2 == 1) return ran;
+            else RandomNumber();
         }
 
         private static string RandomLight(){
@@ -58,31 +59,5 @@ namespace DungeonCrawler{
 
             return material[ranMaterial];
         }
-
-        public int Width{
-            get { return _width; }
-            set { _width = value; }
-        }
-        public int Length{
-            get { return _length; }
-            set { _length = value; }
-        }
-        public int Height{
-            get { return _height; }
-            set { _height = value; }
-        }
-        public string LightLevel{
-            get { return _lightLevel; }
-            set { _lightLevel = value; }
-        }
-        public string WallMaterial{
-            get { return _wallMaterial; }
-            set { _wallMaterial = value; }
-        }
-        public string FloorMaterial{
-            get { return _floorMaterial; }
-            set { _floorMaterial = value; }
-        }
-
     }
 }
