@@ -45,13 +45,18 @@
   <ItemGroup>
     <Compile Include="Combat System\CombatSystem.cs" />
     <Compile Include="Combat System\ProficiencyBonus.cs" />
+    <Compile Include="Entities\CombatClasses\Barbarian\Barbarian.cs" />
+    <Compile Include="Entities\CombatClasses\Barbarian\BarbarianTraits.cs" />
     <Compile Include="Entities\CombatClasses\CombatClass.cs" />
-    <Compile Include="Entities\CombatClasses\BarbarianAbility.cs" />
+    <Compile Include="Entities\CombatClasses\MonsterLoot.cs" />
     <Compile Include="Entities\Enemies\Bosses\Bosses.cs" />
     <Compile Include="Entities\Entity Features\IHealth.cs" />
     <Compile Include="Entities\Entity Features\Traits.cs" />
     <Compile Include="Entities\Entity Features\Species.cs" />
     <Compile Include="Entities\Main Entities\Enemy.cs" />
+    <Compile Include="Map\CoordinateSystem.cs" />
+    <Compile Include="Map\Map.cs" />
+    <Compile Include="Map\Rooms\startRoom.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Entities\Entity.cs" />
     <Compile Include="Entities\Main Entities\Player.cs" />
@@ -60,10 +65,10 @@
     <Compile Include="Game\gameStates.cs" />
     <Compile Include="Menu\menu.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Rooms\startRoom.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="Entities\CombatClasses\IMonsterDrop" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Combat System\Spells\" />

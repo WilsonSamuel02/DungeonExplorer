@@ -31,12 +31,12 @@ namespace DungeonCrawler
 
         public void TakeDamage(int damageAmount)
         {
-            base.Health -= damageAmount;
+            Health -= damageAmount;
         }
 
         public void Heal(int healAmount)
         {
-            base.Health += healAmount;
+            Health += healAmount;
         }
     }
 }

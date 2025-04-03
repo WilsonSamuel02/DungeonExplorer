@@ -1,8 +1,9 @@
 using System;
+using System.Collections.Generic;
 
 namespace DungeonCrawler
 {
-    internal static class CoordinateSystem
+    internal class CoordinateSystem
     {
         public int GetArea(int width, int height, int length)
         {
@@ -13,7 +14,7 @@ namespace DungeonCrawler
         {
             List<int> zAxis = new List<int>();
             List<int> xAxis = new List<int>();
-            List<string> coordinates = new List<string>();
+            List<List<int>> coordinates = new List<List<int>>();
 
             int room2DSize = width * length;
 
@@ -45,6 +46,8 @@ namespace DungeonCrawler
                     }
                 }
             }
+
+            return coordinates;
         }
     }
 }

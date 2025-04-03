@@ -8,69 +8,67 @@ namespace DungeonCrawler
 {
     internal class Species : Entity
     {
-        public void SpeciesSelection(string speciesName)
+        public static void SpeciesSelection(string speciesName)
         {
             switch (speciesName.ToLower())
             {
                 case "dwarf":
-                    base.Species = "Dwarf";
-                    base.Size = "medium";
-                    base.Speed = 30;
+                    Dwarf.SetDescription();
                     break;
                 case "elf":
-                    base.Species = "Elf";
-                    base.Size = "medium";
-                    base.Speed = 30;
+                    Specie = "Elf";
+                    Size = "medium";
+                    Speed = 30;
                     break;
                 case "halfling":
-                    base.Species = "Halfling";
-                    base.Size = "small";
-                    base.Speed = 30;
+                    Specie = "Halfling";
+                    Size = "small";
+                    Speed = 30;
                     break;
                 case "human":
-                    base.Species = "Human";
-                    base.Size = "medium";
-                    base.Speed = 30;
+                    Specie = "Human";
+                    Size = "medium";
+                    Speed = 30;
                     break;
                 case "dragonborn":
-                    base.Species = "Dragonborn";
-                    base.Size = "medium";
-                    base.Speed = 30;
+                    Specie = "Dragonborn";
+                    Size = "medium";
+                    Speed = 30;
                     break;
                 case "gnome":
-                    base.Species = "Gnome";
-                    base.Size = "small";
-                    base.Speed = 25;
+                    Specie = "Gnome";
+                    Size = "small";
+                    Speed = 25;
                     break;
                 case "goliath":
-                    base.Species = "Goliath";
-                    base.Size = "medium";
-                    base.Speed = 30;
+                    Specie = "Goliath";
+                    Size = "medium";
+                    Speed = 30;
                     break;
                 case "orc":
-                    base.Species = "Orc";
-                    base.Size = "medium";
-                    base.Speed = 30;
+                    Specie = "Orc";
+                    Size = "medium";
+                    Speed = 30;
                     break;
                 case "tiefling":
-                    base.Species = "Tiefling";
-                    base.Size = "medium";
-                    base.Speed = 30;
+                    Specie = "Tiefling";
+                    Size = "medium";
+                    Speed = 30;
                     break;
                 case "changeling":
-                    base.Species = "Changeling";
-                    base.Size = "small";
-                    base.Speed = 30;
+                    Specie = "Changeling";
+                    Size = "small";
+                    Speed = 30;
                     break;
                 case "shifter":
-                    base.Species = "Shifter";
-                    base.Size = "medium";
-                    base.Speed = 30;
+                    Specie = "Shifter";
+                    Size = "medium";
+                    Speed = 30;
                     break;
                 case "warforged":
-                    base.Species = "Warforged";
-                    base.Size = "medium";
-                    base.Speed = 30;
+                    Specie = "Warforged";
+                    Size = "medium";
+                    Speed = 30;
                     break;
             }
         }

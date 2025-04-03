@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 
 namespace DungeonCrawler{
 
@@ -6,13 +7,31 @@ namespace DungeonCrawler{
         //main game class
         //It is split from game logic as it provides a more organised game logic
         //In the future the text will be in a different class so that it is much cleaner and would be easier to add more methods and easier to implement
-        
+
+
         public static int Play(){
 
-            int gameState;
+            List<string> _species = new List<string>
+            {
+                "dwarf",
+                "elf",
+                "halfling",
+                "human",
+                "dragonborn",
+                "gnome",
+                "goliath",
+                "orc",
+                "tiefling",
+                "changeling",
+                "shifter",
+                "warforged"
+            };
+
+        int gameState;
 
             string playerName;
             string combatClass;
+            string species;
 
             Map map = new Map();
             StartRoom startRoom = map.startRoom;
@@ -32,6 +51,46 @@ namespace DungeonCrawler{
                 else
                 {
                     Console.WriteLine("Please input a name before going forward!");
+                }
+            }
+
+            while (true)
+            {
+                Console.WriteLine();
+                Console.WriteLine("What species would you like your warrior to be?");
+                Console.WriteLine("- Dwarf");
+                Console.WriteLine("- Elf");
+                Console.WriteLine("- Halfling");
+                Console.WriteLine("- Human");
+                Console.WriteLine("- Dragonborn");
+                Console.WriteLine("- Gnome");
+                Console.WriteLine("- Goliath");
+                Console.WriteLine("- Orc");
+                Console.WriteLine("- Tiefling");
+                Console.WriteLine("- Changeling");
+                Console.WriteLine("- Shifter");
+                Console.WriteLine("- Warforged");
+                species = Console.ReadLine();
+
+                if (species.Length > 0)
+                {
+                    foreach (string specieType in _species)
+                    {
+                        if (species == specieType)
+                        {
+                            break;
+                        }
+                        else
+                        {
+                            Console.WriteLine("Please select a valid species");
+                        }
+                    }
+
+                    break;
+                }
+                else
+                {
+                    Console.WriteLine("Please select a class before going forward!");
                 }
             }
 
@@ -64,11 +123,11 @@ namespace DungeonCrawler{
                 }
             }
 
-            Player player = new Player(playerName, combatClass, map.GetStartCoordinates(startRoom.Width, startRoom.Length));
+            Player player = new Player(playerName, combatClass, species, map.GetStartCoordinates(startRoom.Width, startRoom.Length));
 
             while (true){
 
-                Console.WriteLine($"Welcome to Kendryl {player.Name}!");
+                Console.WriteLine($"Welcome to Kendryl {Entity.Name}!");
                 Console.WriteLine("Blah blah blah, more story here!");
                 Console.WriteLine("Blah blah blah, you're in a dungeon now");
                 Console.WriteLine();
@@ -78,7 +137,7 @@ namespace DungeonCrawler{
                 Console.WriteLine("What would you like to do?");
                 Console.WriteLine();
                 Console.WriteLine("- 'Observe' the room");
-                Console.WriteLine("- Get own 'description'")
+                Console.WriteLine("- Get own 'description'");
                 Console.WriteLine("- Access 'Inventory'");
                 Console.WriteLine("- Check 'Stats'");
                 Console.WriteLine("- 'Leave'");

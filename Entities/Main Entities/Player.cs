@@ -11,12 +11,10 @@ namespace DungeonCrawler
     /// This player class inherits from the Entity class, setting the players name and other variables as needed.
     /// It is also house to certain player specific methods, such as "AccessInventory", "AccessStats", etc.
     /// </remarks>
-    internal class Player : Entity, IHealth 
+    internal class Player :Entity, IHealth 
     {
 
         private List<string> _inventory;
-        private CombatClass _combatClass = new CombatClass();
-        private Species _species = new Species();
 
         /// <summary>
         /// Empty player constructor.
@@ -34,14 +32,14 @@ namespace DungeonCrawler
 
         public Player(string name, string combatClass, string species, List<int> currentCoordinates)
         {
-            base.Name = name;
-            base.Level = 1;
-            base.XP = 0;
-            base.Gold = 10;
-            base.CombatClass = combatClass
+            Name = name;
+            Level = 1;
+            XP = 0;
+            Gold = 10;
+            Class = combatClass;
             CurrentCoordinates = currentCoordinates;
-            _combatClass.ClassSelection(combatClass);
-            _species.SpeciesSelection(species)
+            CombatClass.ClassSelection(combatClass);
+            Species.SpeciesSelection(species);
 
             this._inventory = new List<string>();
         }
@@ -54,12 +52,12 @@ namespace DungeonCrawler
 
         public void TakeDamage(int damageAmount)
         {
-            base.Health -= damageAmount;
+            Health -= damageAmount;
         }
 
         public void Heal(int healAmount)
         {
-            base.Health += healAmount;
+            Health += healAmount;
         }
 
         /// <summary>
@@ -82,7 +80,7 @@ namespace DungeonCrawler
                 Console.WriteLine();
                 Console.WriteLine("---- Inventory ----");
                 Console.WriteLine();
-                Console.WriteLine($"Gold: {base.Gold}")
+                Console.WriteLine($"Gold: {Gold}");
 
                 for (int i = 0; i < _inventory.Count; i++){
                     Console.WriteLine($"- {_inventory[i]}");
@@ -103,14 +101,14 @@ namespace DungeonCrawler
             Console.WriteLine();
             Console.WriteLine("---- Stats ----");
             Console.WriteLine();
-            Console.WriteLine($"HP: {base.Health}");
-            Console.WriteLine($"Armour: {base.Armour}");
-            Console.WriteLine($"Strength: {base.Strength}");
-            Console.WriteLine($"Dexterity: {base.Dexterity}");
-            Console.WriteLine($"Intelligence: {base.Intelligence}");
+            Console.WriteLine($"HP: {Health}");
+            Console.WriteLine($"Armour: {Armour}");
+            Console.WriteLine($"Strength: {Strength}");
+            Console.WriteLine($"Dexterity: {Dexterity}");
+            Console.WriteLine($"Intelligence: {Intelligence}");
             Console.WriteLine($"Constitution: { Constitution}");
-            Console.WriteLine($"Wisdom: {base.Wisdom}");
-            Console.WriteLine($"Charisma: {base.Charisma}");
+            Console.WriteLine($"Wisdom: {Wisdom}");
+            Console.WriteLine($"Charisma: {Charisma}");
             Console.WriteLine();
             Console.WriteLine("---------------");
         }
@@ -118,13 +116,13 @@ namespace DungeonCrawler
         public void GetDescription()
         {
             Console.WriteLine();
-            Console.WriteLine($"---- {base.Name} ----");
+            Console.WriteLine($"---- {Name} ----");
             Console.WriteLine();
-            Console.WriteLine($"Level: {base.Level}");
-            Console.WriteLine($"Class: {base.CombatClass}");
-            Console.WriteLine($"Species: {base.Species}");
-            Console.WriteLine($"Size: {base.Size}");
-            Console.WriteLine($"Speed: {base.Speed}");
+            Console.WriteLine($"Level: {Level}");
+            Console.WriteLine($"Class: {Class}");
+            Console.WriteLine($"Species: {Specie}");
+            Console.WriteLine($"Size: {Size}");
+            Console.WriteLine($"Speed: {Speed}");
             Console.WriteLine();
             Console.WriteLine("----------------------");
         }

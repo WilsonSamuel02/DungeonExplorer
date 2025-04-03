@@ -1,24 +1,25 @@
 using System;
+using System.Collections.Generic;
 
 namespace DungeonCrawler
 {
-    internal static class Barbarian : Entity
+    internal class Barbarian : Entity
     {
-        protected resistance = new List<string>();
-        public void SetAbilityScore()
+        protected List<string> _resistance = new List<string>();
+        public static void SetAbilityScore()
         {
-            base.Health = 12;
-            base.MaxHealth = 12;
-            base.Armour = 10;
-            base.Strength = 15;
-            base.Dexterity = 10;
-            base.Intelligence = 12;
-            base.Constitution = 14;
-            base.Wisdom = 8;
-            base.Charisma = 13;
+            Health = 12;
+            MaxHealth = 12;
+            Armour = 10;
+            Strength = 15;
+            Dexterity = 10;
+            Intelligence = 12;
+            Constitution = 14;
+            Wisdom = 8;
+            Charisma = 13;
         }
 
-        public int GetRageDamage(int level)
+        public static int GetRageDamage(int level)
         {
             if (level >= 1 && level < 9) return 2;
             else if (level >= 9 && level < 16) return 3;
@@ -26,7 +27,7 @@ namespace DungeonCrawler
             else return 0;
         }
 
-        public int GetRageAmount(int level)
+        public static int GetRageAmount(int level)
         {
             if (level >= 1 && level < 3) return 2;
             else if (level >= 3 && level < 6) return 3;
@@ -36,7 +37,7 @@ namespace DungeonCrawler
             else return 0;
         }
 
-        public int GetWeaponMastery(int level)
+        public static int GetWeaponMastery(int level)
         {
             if (level >= 1 && level < 4) return 2;
             else if (level >= 4 && level < 12) return 3;
