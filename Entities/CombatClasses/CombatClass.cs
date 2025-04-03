@@ -15,7 +15,7 @@ namespace DungeonCrawler
                 case "artificer":
                     base.Health = 10;
                     base.MaxHealth = 10;
-                    base.Armour = 12;
+                    base.Armour = 11;
                     base.Strength = 14;
                     base.Dexterity = 13;
                     base.Intelligence = 15;
@@ -24,9 +24,9 @@ namespace DungeonCrawler
                     base.Charisma = 8;
                     break;
                 case "barbarian":
-                    base.Health = 20;
-                    base.MaxHealth = 20;
-                    base.Armour = 20;
+                    base.Health = 12;
+                    base.MaxHealth = 12;
+                    base.Armour = 10;
                     base.Strength = 15;
                     base.Dexterity = 10;
                     base.Intelligence = 12;
@@ -35,9 +35,9 @@ namespace DungeonCrawler
                     base.Charisma = 13;
                     break;
                 case "bard":
-                    base.Health = 10;
-                    base.MaxHealth = 10;
-                    base.Armour = 8;
+                    base.Health = 11;
+                    base.MaxHealth = 11;
+                    base.Armour = 12;
                     base.Strength = 8;
                     base.Dexterity = 14;
                     base.Intelligence = 13;
@@ -48,7 +48,7 @@ namespace DungeonCrawler
                 case "cleric":
                     base.Health = 10;
                     base.MaxHealth = 10;
-                    base.Armour = 8;
+                    base.Armour = 11;
                     base.Strength = 8;
                     base.Dexterity = 12;
                     base.Intelligence = 13;
@@ -59,7 +59,7 @@ namespace DungeonCrawler
                 case "druid":
                     base.Health = 10;
                     base.MaxHealth = 10;
-                    base.Armour = 12;
+                    base.Armour = 11;
                     base.Strength = 12;
                     base.Dexterity = 13;
                     base.Intelligence = 14;
@@ -68,9 +68,9 @@ namespace DungeonCrawler
                     base.Charisma = 8;
                     break;
                 case "fighter":
-                    base.Health = 10;
-                    base.MaxHealth = 10;
-                    base.Armour = 16;
+                    base.Health = 12;
+                    base.MaxHealth = 12;
+                    base.Armour = 12;
                     base.Strength = 13;
                     base.Dexterity = 15;
                     base.Intelligence = 12;
@@ -90,19 +90,19 @@ namespace DungeonCrawler
                     base.Charisma = 8;
                     break;
                 case "paladin":
-                    base.Health = 10;
-                    base.MaxHealth = 10;
-                    base.Armour = 16;
+                    base.Health = 11;
+                    base.MaxHealth = 11;
+                    base.Armour = 12;
                     base.Strength = 15;
-                    base.Dexterity = 8;
-                    base.Intelligence = 10;
+                    base.Dexterity = 14;
+                    base.Intelligence = 8;
                     base.Constitution = 12;
-                    base.Wisdom = 13;
-                    base.Charisma = 14;
+                    base.Wisdom = 10;
+                    base.Charisma = 13;
                     break;
                 case "ranger":
-                    base.Health = 10;
-                    base.MaxHealth = 10;
+                    base.Health = 11;
+                    base.MaxHealth = 11;
                     base.Armour = 12;
                     base.Strength = 13;
                     base.Dexterity = 15;
@@ -112,9 +112,9 @@ namespace DungeonCrawler
                     base.Charisma = 10;
                     break;
                 case "rogue":
-                    base.Health = 10;
-                    base.MaxHealth = 10;
-                    base.Armour = 8;
+                    base.Health = 11;
+                    base.MaxHealth = 11;
+                    base.Armour = 12;
                     base.Strength = 10;
                     base.Dexterity = 15;
                     base.Intelligence = 14;
@@ -123,9 +123,9 @@ namespace DungeonCrawler
                     base.Charisma = 13;
                     break;
                 case "sorcerer":
-                    base.Health = 10;
-                    base.MaxHealth = 10;
-                    base.Armour = 2;
+                    base.Health = 12;
+                    base.MaxHealth = 12;
+                    base.Armour = 9;
                     base.Strength = 10;
                     base.Dexterity = 8;
                     base.Intelligence = 12;
@@ -134,9 +134,9 @@ namespace DungeonCrawler
                     base.Charisma = 15;
                     break;
                 case "warlock":
-                    base.Health = 10;
-                    base.MaxHealth = 10;
-                    base.Armour = 4;
+                    base.Health = 11;
+                    base.MaxHealth = 11;
+                    base.Armour = 11;
                     base.Strength = 8;
                     base.Dexterity = 13;
                     base.Intelligence = 10;
@@ -145,9 +145,9 @@ namespace DungeonCrawler
                     base.Charisma = 15;
                     break;
                 case "wizard":
-                    base.Health = 10;
-                    base.MaxHealth = 10;
-                    base.Armour = 2;
+                    base.Health = 9;
+                    base.MaxHealth = 9;
+                    base.Armour = 11;
                     base.Strength = 10;
                     base.Dexterity = 12;
                     base.Intelligence = 15;

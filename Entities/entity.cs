@@ -9,6 +9,8 @@ namespace DungeonCrawler{
 
         public string Name { get; set; }
         public int Level { get; protected set; }
+        public int XP { get; protected set; }
+        public int Gold { get; protected set; }
         public int Health { get; protected set; }
         public int MaxHealth { get; protected set; }
         public int Armour { get; protected set; }

@@ -43,6 +43,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Combat System\CombatSystem.cs" />
+    <Compile Include="Combat System\ProficiencyBonus.cs" />
     <Compile Include="Entities\CombatClasses\CombatClass.cs" />
     <Compile Include="Entities\CombatClasses\BarbarianAbility.cs" />
     <Compile Include="Entities\Enemies\Bosses\Bosses.cs" />
@@ -64,6 +66,8 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Combat System\Spells\" />
+    <Folder Include="Entities\Enemies\Bosses\Boss Classes\" />
     <Folder Include="Game\Music\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -23,12 +23,18 @@ namespace DungeonCrawler
         /// </remarks>
         public Player(){
             Name = "Empty Name";
+            Level = 1;
+            XP = 0;
+            Gold = 10;
             this._inventory = new List<string>();
         }
 
         public Player(string name, string combatClass)
         {
             Name = name;
+            Level = 1;
+            XP = 0;
+            Gold = 10;
             ClassSelection(combatClass);
 
             this._inventory = new List<string>();
@@ -90,7 +96,6 @@ namespace DungeonCrawler
             Console.WriteLine("---- Stats ----");
             Console.WriteLine();
             Console.WriteLine($"HP: {base.Health}");
-            Console.WriteLine($"MP: {base.Mana}");
             Console.WriteLine($"Armour: {base.Armour}");
             Console.WriteLine($"Strength: {base.Strength}");
             Console.WriteLine($"Dexterity: {base.Dexterity}");
