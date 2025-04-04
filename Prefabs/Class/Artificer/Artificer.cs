@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DungeonCrawler
 {
-    internal class Artificer : Entity
+    internal class Artificer : Entity 
     {
         protected List<string> _resistance = new List<string>();
 

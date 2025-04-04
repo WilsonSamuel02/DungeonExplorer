@@ -14,7 +14,7 @@ namespace DungeonCrawler
     internal class Player :Entity, IHealth 
     {
 
-        private List<string> _inventory;
+        private List<Item> _inventory;
 
         /// <summary>
         /// Empty player constructor.
@@ -27,12 +27,13 @@ namespace DungeonCrawler
             Level = 1;
             XP = 0;
             Gold = 10;
-            this._inventory = new List<string>();
+            this._inventory = new List<Item>();
         }
 
-        public Player(string name, string combatClass, string species, List<int> currentCoordinates)
+        public Player(string name, string gender, string combatClass, string species, List<int> currentCoordinates)
         {
             Name = name;
+            Gender = gender;
             Level = 1;
             XP = 0;
             Gold = 10;
@@ -41,10 +42,10 @@ namespace DungeonCrawler
             CombatClass.ClassSelection(combatClass);
             Species.SpeciesSelection(species);
 
-            this._inventory = new List<string>();
+            this._inventory = new List<Item>();
         }
 
-        public List<string> Inventory
+        public List<Item> Inventory
         {
             get { return _inventory; }
             set { _inventory = value; }
@@ -120,6 +121,7 @@ namespace DungeonCrawler
             Console.WriteLine();
             Console.WriteLine($"Level: {Level}");
             Console.WriteLine($"Class: {Class}");
+            Console.WriteLine($"Gender: {Gender}");
             Console.WriteLine($"Species: {Specie}");
             Console.WriteLine($"Size: {Size}");
             Console.WriteLine($"Speed: {Speed}");
@@ -138,7 +140,7 @@ namespace DungeonCrawler
         /// <returns>
         /// Inventory list.
         /// </returns>
-        public List<string> PickupItem(string item){
+        public List<Item> PickupItem(Item item){
             
             
             if (_inventory.Count < 5){

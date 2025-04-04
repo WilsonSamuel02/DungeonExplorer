@@ -1,0 +1,21 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace DungeonCrawler
+{
+    internal class Dagger : Weapons
+    {
+        public static void SetDescription()
+        {
+            Name = "Dagger";
+            Description = "";
+            ItemType = "Simple Melee";
+            DamageType = "Piercing";
+            WeaponProperties = new List<string> { "Light", "Finesse", "Thrown", "Nick" };
+            Damage = new List<string> { "d4", "1" };
+        }
+    }
+}

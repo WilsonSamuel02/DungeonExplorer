@@ -32,6 +32,7 @@ namespace DungeonCrawler{
             string playerName;
             string combatClass;
             string species;
+            string gender;
 
             Map map = new Map();
             StartRoom startRoom = map.startRoom;
@@ -57,6 +58,29 @@ namespace DungeonCrawler{
             while (true)
             {
                 Console.WriteLine();
+                Console.WriteLine("What gender would you like your warrior to be?");
+                Console.WriteLine();
+                Console.WriteLine("- Male");
+                Console.WriteLine("- Female");
+                Console.WriteLine("- Non-Binary");
+                gender = Console.ReadLine();
+
+                if (playerName.Length > 0)
+                {
+                    if (gender.ToLower() == "male" ||  gender.ToLower() == "female" || gender.ToLower() == "non-binary")
+                    {
+                        break;
+                    }
+                }
+                else
+                {
+                    Console.WriteLine("Please select a valid option before going forward!");
+                }
+            }
+
+            while (true)
+            {
+                Console.WriteLine();
                 Console.WriteLine("What species would you like your warrior to be?");
                 Console.WriteLine("- Dwarf");
                 Console.WriteLine("- Elf");
@@ -76,13 +100,13 @@ namespace DungeonCrawler{
                 {
                     foreach (string specieType in _species)
                     {
-                        if (species == specieType)
+                        if (species != specieType)
                         {
-                            break;
+                            Console.WriteLine("Please select a valid species");
                         }
                         else
                         {
-                            Console.WriteLine("Please select a valid species");
+                            break;
                         }
                     }
 
@@ -123,7 +147,7 @@ namespace DungeonCrawler{
                 }
             }
 
-            Player player = new Player(playerName, combatClass, species, map.GetStartCoordinates(startRoom.Width, startRoom.Length));
+            Player player = new Player(playerName, gender, combatClass, species, map.GetStartCoordinates(startRoom.Width, startRoom.Length));
 
             while (true){
 

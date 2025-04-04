@@ -8,70 +8,7 @@ namespace DungeonCrawler
 {
     internal class Species : Entity
     {
-        public static void SpeciesSelection(string speciesName)
-        {
-            switch (speciesName.ToLower())
-            {
-                case "dwarf":
-                    Dwarf.SetDescription();
-                    break;
-                case "elf":
-                    Specie = "Elf";
-                    Size = "medium";
-                    Speed = 30;
-                    break;
-                case "halfling":
-                    Specie = "Halfling";
-                    Size = "small";
-                    Speed = 30;
-                    break;
-                case "human":
-                    Specie = "Human";
-                    Size = "medium";
-                    Speed = 30;
-                    break;
-                case "dragonborn":
-                    Specie = "Dragonborn";
-                    Size = "medium";
-                    Speed = 30;
-                    break;
-                case "gnome":
-                    Specie = "Gnome";
-                    Size = "small";
-                    Speed = 25;
-                    break;
-                case "goliath":
-                    Specie = "Goliath";
-                    Size = "medium";
-                    Speed = 30;
-                    break;
-                case "orc":
-                    Specie = "Orc";
-                    Size = "medium";
-                    Speed = 30;
-                    break;
-                case "tiefling":
-                    Specie = "Tiefling";
-                    Size = "medium";
-                    Speed = 30;
-                    break;
-                case "changeling":
-                    Specie = "Changeling";
-                    Size = "small";
-                    Speed = 30;
-                    break;
-                case "shifter":
-                    Specie = "Shifter";
-                    Size = "medium";
-                    Speed = 30;
-                    break;
-                case "warforged":
-                    Specie = "Warforged";
-                    Size = "medium";
-                    Speed = 30;
-                    break;
-            }
-        }
+        
     }
 
     internal enum DragonSpecies

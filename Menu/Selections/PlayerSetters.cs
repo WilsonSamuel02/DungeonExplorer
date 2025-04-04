@@ -1,5 +1,4 @@
-﻿using DungeonExplorer.Prefabs.Class.Cleric;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -7,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace DungeonCrawler
 {
-    internal class CombatClass : Entity
+    internal class PlayerSetters : Entity
     {
         public static void ClassSelection(string combatClass)
         {
-            switch(combatClass.ToLower())
+            switch (combatClass.ToLower())
             {
                 case "artificer":
                     Artificer.SetAbilityScore();
@@ -50,15 +49,50 @@ namespace DungeonCrawler
                     Warlock.SetAbilityScore();
                     break;
                 case "wizard":
-                    Health = 9;
-                    MaxHealth = 9;
-                    Armour = 11;
-                    Strength = 10;
-                    Dexterity = 12;
-                    Intelligence = 15;
-                    Constitution = 8;
-                    Wisdom = 14;
-                    Charisma = 13;
+                    Wizard.SetAbilityScore();
+                    break;
+            }
+        }
+
+        public static void SpeciesSelection(string speciesName)
+        {
+            switch (speciesName.ToLower())
+            {
+                case "dwarf":
+                    Dwarf.SetDescription();
+                    break;
+                case "elf":
+                    Elf.SetDescription();
+                    break;
+                case "halfling":
+                    Halfling.SetDescription();
+                    break;
+                case "human":
+                    Human.SetDescription();
+                    break;
+                case "dragonborn":
+                    Dragonborn.SetDescription();
+                    break;
+                case "gnome":
+                    Gnome.SetDescription();
+                    break;
+                case "goliath":
+                    Goliath.SetDescription();
+                    break;
+                case "orc":
+                    Orc.SetDescription();
+                    break;
+                case "tiefling":
+                    Tiefling.SetDescription();
+                    break;
+                case "changeling":
+                    Changeling.SetDescription();
+                    break;
+                case "shifter":
+                    Shifter.SetDescription();
+                    break;
+                case "warforged":
+                    Warforged.SetDescription();
                     break;
             }
         }

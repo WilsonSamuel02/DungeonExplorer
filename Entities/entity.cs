@@ -7,7 +7,8 @@ namespace DungeonCrawler{
 
         //main entity class that all entities (players and enemies) inherit from
 
-        public static string Name { get; set; }
+        public static string Name { get; protected set; }
+        public static string Gender { get; protected set; }
         public static List<int> CurrentCoordinates { get; protected set; }
         public static int Level { get; protected set; }
         public static int XP { get; protected set; }
