@@ -96,6 +96,7 @@
     <Compile Include="Prefabs\Magic\Cantrips\Cantrip.cs" />
     <Compile Include="Prefabs\Magic\Cantrips\Guidance.cs" />
     <Compile Include="Prefabs\Magic\Cantrips\Light.cs" />
+    <Compile Include="Prefabs\Magic\Cantrips\Mending.cs" />
     <Compile Include="Prefabs\Magic\Magic.cs" />
     <Compile Include="Prefabs\Magic\Spells\Spell.cs" />
     <Compile Include="Prefabs\Species\Changeling\Changeling.cs" />

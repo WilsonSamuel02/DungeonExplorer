@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace DungeonCrawler
 {
-    internal abstract class Cantrip : Magic
+    internal class Cantrip : Magic
     {
         public static string Type { get; protected set; }
-        public static List<CombatClass> CombatClasses { get; protected set; }
+        public static List<string> CombatClasses { get; protected set; }
     }
 }
