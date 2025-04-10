@@ -30,7 +30,7 @@ namespace DungeonCrawler
             this._inventory = new List<Item>();
         }
 
-        public Player(string name, string gender, string combatClass, string species, List<int> currentCoordinates)
+        public Player(string name, string gender, string combatClass, string species)
         {
             Name = name;
             Gender = gender;
@@ -38,7 +38,6 @@ namespace DungeonCrawler
             XP = 0;
             Gold = 10;
             Class = combatClass;
-            CurrentCoordinates = currentCoordinates;
             CombatClass.ClassSelection(combatClass);
             Species.SpeciesSelection(species);
 
