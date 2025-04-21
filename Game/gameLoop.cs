@@ -1,8 +1,7 @@
-﻿using DungeonCrawler;
-using System;
+﻿using System;
 using System.Media;
 
-namespace DungeonExplorer
+namespace DungeonCrawler
 {
     internal class GameLoop
     {
@@ -23,11 +22,12 @@ namespace DungeonExplorer
                         break;
                     case 2:
                         Menu.WinMenu();
-                        running = false;
                         break;
                     case 3:
                         gameState = Menu.GameOver();
-                        running = false;
+                        break;
+                    case 4:
+                        Menu.ExitMenu();
                         break;
                 }
             }

@@ -8,7 +8,7 @@ namespace DungeonCrawler
 {
     internal class LightCrossbow : Weapons
     {
-        public static void SetDescription()
+        public LightCrossbow() : base()
         {
             Name = "Light Crossbow";
             Description = "";

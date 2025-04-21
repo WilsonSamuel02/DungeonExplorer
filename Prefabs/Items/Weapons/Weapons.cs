@@ -6,10 +6,18 @@ using System.Threading.Tasks;
 
 namespace DungeonCrawler
 {
-    internal abstract class Weapons : Item
+    internal class Weapons : Item
     {
-        public static string DamageType { get; protected set; }
-        public static List<string> WeaponProperties { get; protected set; }
-        public static List<string> Damage {  get; protected set; }
+
+        public string DamageType { get; protected set; }
+        public List<string> WeaponProperties { get; protected set; }
+        public List<string> Damage {  get; protected set; }
+
+        public Weapons() : base()
+        {
+            DamageType = "No Damage Type";
+            WeaponProperties = new List<string> { "N/A" };
+            Damage = new List<string> { "N/A" };
+        }
     }
 }

@@ -11,10 +11,11 @@ namespace DungeonCrawler
     /// This player class inherits from the Entity class, setting the players name and other variables as needed.
     /// It is also house to certain player specific methods, such as "AccessInventory", "AccessStats", etc.
     /// </remarks>
-    internal class Player :Entity, IHealth 
+    internal class Player : PlayerSetters, IHealth 
     {
 
         private List<Item> _inventory;
+
 
         /// <summary>
         /// Empty player constructor.
@@ -38,8 +39,8 @@ namespace DungeonCrawler
             XP = 0;
             Gold = 10;
             Class = combatClass;
-            CombatClass.ClassSelection(combatClass);
-            Species.SpeciesSelection(species);
+            ClassSelection(combatClass);
+            SpeciesSelection(species);
 
             this._inventory = new List<Item>();
         }
@@ -75,17 +76,20 @@ namespace DungeonCrawler
 
                 Console.WriteLine();
                 Console.WriteLine("Inventory is Empty");
+                Console.ReadLine();
             }
             else{
                 Console.WriteLine();
                 Console.WriteLine("---- Inventory ----");
                 Console.WriteLine();
                 Console.WriteLine($"Gold: {Gold}");
+                Console.WriteLine();
 
-                for (int i = 0; i < _inventory.Count; i++){
-                    Console.WriteLine($"- {_inventory[i]}");
+                foreach(var item in _inventory){
+                    Console.WriteLine($"- {item.Name}");
                 }
                 Console.WriteLine("-------------------");
+                Console.ReadLine();
             }
         }
 
@@ -111,6 +115,7 @@ namespace DungeonCrawler
             Console.WriteLine($"Charisma: {Charisma}");
             Console.WriteLine();
             Console.WriteLine("---------------");
+            Console.ReadLine();
         }
 
         public void GetDescription()
@@ -126,6 +131,7 @@ namespace DungeonCrawler
             Console.WriteLine($"Speed: {Speed}");
             Console.WriteLine();
             Console.WriteLine("----------------------");
+            Console.ReadLine();
         }
 
         /// <summary>

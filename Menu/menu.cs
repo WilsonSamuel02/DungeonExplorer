@@ -43,8 +43,9 @@ namespace DungeonCrawler{
             return gameState;
         }
 
-        public static void WinMenu(){
-            Console.WriteLine();
+        public static void WinMenu()
+        {
+            Console.Clear();
             Console.WriteLine("####################");
             Console.WriteLine();
             Console.WriteLine("  Congratulations!");
@@ -52,13 +53,15 @@ namespace DungeonCrawler{
             Console.WriteLine("You have completed the game!");
             Console.WriteLine();
             Console.WriteLine("####################");
+
+            Environment.Exit(0);
         }
 
         public static int GameOver(){
             int gameState;
 
             while (true){
-                Console.WriteLine();
+                Console.Clear();
                 Console.WriteLine("####################");
                 Console.WriteLine();
                 Console.WriteLine("     Game Over!");
@@ -91,12 +94,14 @@ namespace DungeonCrawler{
         }
 
         public static void ExitMenu(){
-            Console.WriteLine();
+            Console.Clear();
             Console.WriteLine("####################");
             Console.WriteLine();
             Console.WriteLine("Thank you for playing!");
             Console.WriteLine();
             Console.WriteLine("####################");
+
+            Environment.Exit(0);
         }
     }
 }

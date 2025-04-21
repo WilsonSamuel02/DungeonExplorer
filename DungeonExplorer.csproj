@@ -45,6 +45,8 @@
   <ItemGroup>
     <Compile Include="Combat System\CombatSystem.cs" />
     <Compile Include="Combat System\ProficiencyBonus.cs" />
+    <Compile Include="Menu\Inventory\Inventory.cs" />
+    <Compile Include="Menu\Inventory\Items.cs" />
     <Compile Include="Menu\Selections\BossSetters.cs" />
     <Compile Include="Menu\Selections\PlayerSetters.cs" />
     <Compile Include="Prefabs\Bosses\Arclight Phoenix\ArclightPhoenix.cs" />
@@ -84,7 +86,14 @@
     <Compile Include="Prefabs\Class\Sorcerer\Sorcerer.cs" />
     <Compile Include="Prefabs\Class\Warlock\Warlock.cs" />
     <Compile Include="Prefabs\Class\Wizard\Wizard.cs" />
+    <Compile Include="Prefabs\Items\Armor\Armor.cs" />
+    <Compile Include="Prefabs\Items\Crafting Equipment\CraftingEquipment.cs" />
+    <Compile Include="Prefabs\Items\Food\Food.cs" />
+    <Compile Include="Prefabs\Items\Gear\Gear.cs" />
     <Compile Include="Prefabs\Items\Item.cs" />
+    <Compile Include="Prefabs\Items\Magic Items\MagicItems.cs" />
+    <Compile Include="Prefabs\Items\Potions\Potions.cs" />
+    <Compile Include="Prefabs\Items\Quest Items\QuestItems.cs" />
     <Compile Include="Prefabs\Items\Weapons\Melee\Simple\Club.cs" />
     <Compile Include="Prefabs\Items\Weapons\Melee\Simple\Dagger.cs" />
     <Compile Include="Prefabs\Items\Weapons\Melee\Simple\FryingPan.cs" />
@@ -93,10 +102,6 @@
     <Compile Include="Prefabs\Items\Weapons\Ranged\Simple\LightCrossbow.cs" />
     <Compile Include="Prefabs\Items\Weapons\Ranged\Simple\ShortBow.cs" />
     <Compile Include="Prefabs\Items\Weapons\Weapons.cs" />
-    <Compile Include="Prefabs\Magic\Cantrips\Cantrip.cs" />
-    <Compile Include="Prefabs\Magic\Cantrips\Guidance.cs" />
-    <Compile Include="Prefabs\Magic\Cantrips\Light.cs" />
-    <Compile Include="Prefabs\Magic\Cantrips\Mending.cs" />
     <Compile Include="Prefabs\Magic\Magic.cs" />
     <Compile Include="Prefabs\Magic\Spells\Spell.cs" />
     <Compile Include="Prefabs\Species\Changeling\Changeling.cs" />
@@ -127,13 +132,6 @@
   <ItemGroup>
     <Folder Include="Combat System\Spells\" />
     <Folder Include="Game\Music\" />
-    <Folder Include="Prefabs\Items\Armour\" />
-    <Folder Include="Prefabs\Items\Crafting Equipment\" />
-    <Folder Include="Prefabs\Items\Food\" />
-    <Folder Include="Prefabs\Items\Gear\" />
-    <Folder Include="Prefabs\Items\Magic Items\" />
-    <Folder Include="Prefabs\Items\Potions\" />
-    <Folder Include="Prefabs\Items\Tools\" />
     <Folder Include="Prefabs\Items\Weapons\Melee\Martial\" />
     <Folder Include="Prefabs\Items\Weapons\Ranged\Ammunition\" />
     <Folder Include="Prefabs\Items\Weapons\Ranged\Martial\" />

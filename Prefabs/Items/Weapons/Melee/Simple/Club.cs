@@ -8,7 +8,7 @@ namespace DungeonCrawler
 {
     internal class Club : Weapons
     {
-        public static void SetDescription()
+        public Club() : base()
         {
             Name = "Club";
             Description = "";

@@ -8,7 +8,7 @@ namespace DungeonCrawler
 {
     internal class Handaxe : Weapons
     {
-        public static void SetDescription()
+        public Handaxe() : base()
         {
             Name = "Hand Axe";
             Description = "";

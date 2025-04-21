@@ -9,5 +9,7 @@ namespace DungeonCrawler
     internal class Spell : Magic
     {
         public static string Type { get; protected set; }
+
+        public Spell() : base() { }
     }
 }

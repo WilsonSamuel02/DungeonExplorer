@@ -11,19 +11,160 @@ namespace DungeonCrawler{
 
         public static int Play(){
 
+<<<<<<< Updated upstream
             int gameState;
+=======
+            List<string> _species = new List<string>
+            {
+                "dwarf",
+                "elf",
+                "halfling",
+                "human",
+                "dragonborn",
+                "gnome",
+                "goliath",
+                "orc",
+                "tiefling",
+                "changeling",
+                "shifter",
+                "warforged"
+            };
+
+            int gameState;
+
+            string playerName;
+            string combatClass;
+            string species;
+            string gender;
+>>>>>>> Stashed changes
 
             Map map = new Map();
             StartRoom startRoom = map.startRoom;
 
+<<<<<<< Updated upstream
             Player player = CharacterCreation.CharacterCreator();
+=======
+            Console.Clear();
+            Console.WriteLine("Blah blah blah, story here, later.");
+
+            while (true)
+            {
+                Console.WriteLine();
+                Console.WriteLine("What would you like to name your warrior?");
+                playerName = Console.ReadLine();
+
+                if (playerName.Length > 0)
+                {
+                    Console.Clear();
+                    break;
+                }
+                else
+                {
+                    Console.WriteLine("Please input a name before going forward!");
+                }
+            }
+
+            while (true)
+            {
+                Console.WriteLine("What gender would you like your warrior to be?");
+                Console.WriteLine();
+                Console.WriteLine("- Male");
+                Console.WriteLine("- Female");
+                Console.WriteLine("- Non-Binary");
+                gender = Console.ReadLine();
+
+                if (playerName.Length > 0)
+                {
+                    if (gender.ToLower() == "male" ||  gender.ToLower() == "female" || gender.ToLower() == "non-binary")
+                    {
+                        Console.Clear();
+                        break;
+                    }
+                }
+                else
+                {
+                    Console.WriteLine("Please select a valid option before going forward!");
+                }
+            }
+
+            while (true)
+            {
+                Console.WriteLine("What species would you like your warrior to be?");
+                Console.WriteLine("- Dwarf");
+                Console.WriteLine("- Elf");
+                Console.WriteLine("- Halfling");
+                Console.WriteLine("- Human");
+                Console.WriteLine("- Dragonborn");
+                Console.WriteLine("- Gnome");
+                Console.WriteLine("- Goliath");
+                Console.WriteLine("- Orc");
+                Console.WriteLine("- Tiefling");
+                Console.WriteLine("- Changeling");
+                Console.WriteLine("- Shifter");
+                Console.WriteLine("- Warforged");
+                species = Console.ReadLine();
+
+                if (species.Length > 0)
+                {
+                    foreach (string specieType in _species)
+                    {
+                        if (species != specieType)
+                        {
+                            Console.WriteLine("Please select a valid species");
+                        }
+                        else
+                        {
+                            Console.Clear();
+                            break;
+                        }
+                    }
+
+                    break;
+                }
+                else
+                {
+                    Console.WriteLine("Please select a class before going forward!");
+                }
+            }
+
+            while (true)
+            {
+                Console.WriteLine("What class would you like your warrior to be?");
+                Console.WriteLine("- Artificer");
+                Console.WriteLine("- Barbarian");
+                Console.WriteLine("- Bard");
+                Console.WriteLine("- Cleric");
+                Console.WriteLine("- Druid");
+                Console.WriteLine("- Fighter");
+                Console.WriteLine("- Monk");
+                Console.WriteLine("- Paladin");
+                Console.WriteLine("- Ranger");
+                Console.WriteLine("- Rogue");
+                Console.WriteLine("- Sorcerer");
+                Console.WriteLine("- Warlock");
+                Console.WriteLine("- Wizard");
+                combatClass = Console.ReadLine();
+
+                if(combatClass.Length > 0)
+                {
+                    Console.Clear();
+                    break;
+                }
+                else
+                {
+                    Console.WriteLine("Please select a class before going forward!");
+                }
+            }
+
+            Player player = new Player(playerName, gender, combatClass, species, map.GetStartCoordinates(startRoom.Width, startRoom.Length));
+>>>>>>> Stashed changes
 
             while (true){
 
                 Console.WriteLine($"Welcome to Kendryl {Entity.Name}!");
                 Console.WriteLine("Blah blah blah, more story here!");
                 Console.WriteLine("Blah blah blah, you're in a dungeon now");
-                Console.WriteLine();
+                Console.Clear();
 
                 Console.WriteLine("To select an option please type the words only in quotation marks (i.e. '')");
                 Console.WriteLine();
@@ -58,7 +199,9 @@ namespace DungeonCrawler{
                     else if (userInput.ToLower() == "leave")
                     {
                         Console.WriteLine("You decided to leave and live another day!");
-                        Environment.Exit(0);
+                        gameState = (int)States.EXIT_MENU;
+
+                        return gameState;
                     }
                     else{
                         Console.WriteLine("That is not an option!");
@@ -69,7 +212,7 @@ namespace DungeonCrawler{
                     Console.WriteLine("That is not an option!");
                     Console.WriteLine("Please try again!");
                 }
-                
+
             }
 
             while (true){
@@ -83,11 +226,14 @@ namespace DungeonCrawler{
                 string userInput = Console.ReadLine();
 
                 if (userInput.Length > 0){
-                    if (userInput.ToLower() == "investigate"){
-                    break;
+                    if (userInput.ToLower() == "investigate")
+                    {
+                        break;
                     }
                     else if (userInput.ToLower() == "next room"){
+                        Console.WriteLine();
                         Console.WriteLine("You decide to open the creaky heavy door.");
+
                         gameState = (int)States.WIN_MENU;
 
                         return gameState;
@@ -113,7 +259,7 @@ namespace DungeonCrawler{
                     Console.WriteLine("That is not an option!");
                     Console.WriteLine("Please try again!");
                 }
-                
+
             }
 
             Console.WriteLine("You slowly creep towards the glimmer.");
@@ -130,7 +276,8 @@ namespace DungeonCrawler{
 
                 if (userInput.Length > 0){
                     if (userInput.ToLower() == "pick up"){
-                        player.PickupItem("Damaged Silver Sword");
+                        player.PickupItem(new Club());
+                        player.PickupItem(new Javelin());
                         Console.WriteLine("You pick up the Damaged Silver Sword and add it to you inventory");
                         Console.WriteLine();
                         break;
@@ -150,6 +297,7 @@ namespace DungeonCrawler{
             }
 
             while (true){
+                Console.Clear();
                 Console.WriteLine("What would you like to do?");
                 Console.WriteLine();
                 Console.WriteLine("- Go to the 'next room'");
@@ -163,6 +311,8 @@ namespace DungeonCrawler{
                         Console.WriteLine("You decide to open the creaky heavy door.");
                         gameState = (int)States.WIN_MENU;
 
+                        Console.Clear();
+
                         return gameState;
                     }
                     else if (userInput.ToLower() == "inventory"){
@@ -172,9 +322,10 @@ namespace DungeonCrawler{
                         player.AccessStats();
                     }
                     else if (userInput.ToLower() == "leave"){
+                        Console.WriteLine();
                         Console.WriteLine("You decided to leave and live another day!");
                         gameState = (int)States.EXIT_MENU;
-
+                        
                         return gameState;
                     }
                     else{

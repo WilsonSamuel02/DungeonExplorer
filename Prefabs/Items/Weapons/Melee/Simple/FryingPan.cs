@@ -8,7 +8,7 @@ namespace DungeonCrawler
 {
     internal class FryingPan : Weapons
     {
-        public static void SetDescription()
+        public FryingPan() : base()
         {
             Name = "Frying Pan";
             Description = "";

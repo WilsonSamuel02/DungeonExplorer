@@ -9,6 +9,5 @@ namespace DungeonCrawler{
         WIN_MENU,
         GAME_OVER,
         EXIT_MENU
-
     }
 }

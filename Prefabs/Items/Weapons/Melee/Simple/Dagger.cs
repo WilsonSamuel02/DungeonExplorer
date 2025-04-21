@@ -8,7 +8,7 @@ namespace DungeonCrawler
 {
     internal class Dagger : Weapons
     {
-        public static void SetDescription()
+        public Dagger() : base()
         {
             Name = "Dagger";
             Description = "";
