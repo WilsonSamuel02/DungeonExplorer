@@ -11,9 +11,6 @@ namespace DungeonCrawler{
 
         public static int Play(){
 
-<<<<<<< Updated upstream
-            int gameState;
-=======
             List<string> _species = new List<string>
             {
                 "dwarf",
@@ -36,14 +33,10 @@ namespace DungeonCrawler{
             string combatClass;
             string species;
             string gender;
->>>>>>> Stashed changes
 
             Map map = new Map();
             StartRoom startRoom = map.startRoom;
 
-<<<<<<< Updated upstream
-            Player player = CharacterCreation.CharacterCreator();
-=======
             Console.Clear();
             Console.WriteLine("Blah blah blah, story here, later.");
 
@@ -156,12 +149,11 @@ namespace DungeonCrawler{
                 }
             }
 
-            Player player = new Player(playerName, gender, combatClass, species, map.GetStartCoordinates(startRoom.Width, startRoom.Length));
->>>>>>> Stashed changes
+            Player player = new Player(playerName, gender, combatClass, species);
 
             while (true){
 
-                Console.WriteLine($"Welcome to Kendryl {Entity.Name}!");
+                Console.WriteLine($"Welcome to Kendryl {player.Name}!");
                 Console.WriteLine("Blah blah blah, more story here!");
                 Console.WriteLine("Blah blah blah, you're in a dungeon now");
                 Console.Clear();
