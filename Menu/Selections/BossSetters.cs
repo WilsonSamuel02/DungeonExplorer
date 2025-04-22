@@ -9,7 +9,7 @@ namespace DungeonExplorer.Menu.Selections
 {
     internal class BossSetters : Enemy
     {
-        public BossSetters(string name)
+        public BossSetters(string name) : base(name)
         {
             Name = name;
 
@@ -17,63 +17,63 @@ namespace DungeonExplorer.Menu.Selections
             {
                 //Floor 5 boss
                 case "goblin chiefton":
-                    GoblinChiefton.SetAbilityScore();
+                    //GoblinChiefton.SetAbilityScore();
                     break;
                 //Floor 10 boss
                 case "orc war chief":
-                    OrcWarChief.SetAbilityScore();
+                    //OrcWarChief.SetAbilityScore();
                     break;
                 //Floor 15 boss
                 case "basilisk":
-                    Basilisk.SetAbilityScore();
+                    //Basilisk.SetAbilityScore();
                     break;
                 //Floor 20 boss
                 case "chimera":
-                    Chimera.SetAbilityScore();
+                    //Chimera.SetAbilityScore();
                     break;
                 //Floor 25 boss
                 case "hydra":
-                    Hydra.SetAbilityScore();
+                    //Hydra.SetAbilityScore();
                     break;
                 //Floor 30 boss
                 case "oni":
-                    Oni.SetAbilityScore();
+                    //Oni.SetAbilityScore();
                     break;
                 //Floor 35 boss
                 case "colossus":
-                    Colossus.SetAbilityScore();
+                    //Colossus.SetAbilityScore();
                     break;
                 //Floor 40 boss
                 case "manticore":
-                    Manticore.SetAbilityScore();
+                    //Manticore.SetAbilityScore();
                     break;
                 //Floor 45 boss
                 case "eldrich lich":
-                    EldrichLich.SetAbilityScore();
+                    //EldrichLich.SetAbilityScore();
                     break;
                 //Floor 50 boss
                 case "vampire lord":
-                    VampireLord.SetAbilityScore();
+                    //VampireLord.SetAbilityScore();
                     break;
                 //Floor 55 boss
                 case "baphomet":
-                    Baphomet.SetAbilityScore();
+                    //Baphomet.SetAbilityScore();
                     break;
                 //Floor 60 boss
                 case "jabberwock":
-                    Jabberwock.SetAbilityScore();
+                    //Jabberwock.SetAbilityScore();
                     break;
                 //Floor 65 boss
                 case "arclight phoenix":
-                    ArclightPhoenix.SetAbilityScore();
+                    //ArclightPhoenix.SetAbilityScore();
                     break;
                 //Floor 70 boss
                 case "bahamut":
-                    Bahamut.SetAbilityScore();
+                    //Bahamut.SetAbilityScore();
                     break;
                 //Floor 75 boss
                 case "tiamat":
-                    Tiamat.SetAbilityScore();
+                    //Tiamat.SetAbilityScore();
                     break;
             }
         }

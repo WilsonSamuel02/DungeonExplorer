@@ -15,12 +15,12 @@ namespace DungeonCrawler
             
         }
 
-        public void AccessInventory(Inventory inventory)
+        public void AccessInventory(Player player)
         {
             Console.WriteLine();
             Console.WriteLine("---- Inventory ----");
             Console.WriteLine();
-            Console.WriteLine($"Gold: {Player.Gold}");
+            Console.WriteLine($"Gold: {player.Gold}");
             Console.WriteLine();
             Console.WriteLine("- Armor");
             Console.WriteLine("- Crafting Equipment");
@@ -40,7 +40,7 @@ namespace DungeonCrawler
             {
                 Console.WriteLine();
                 Console.WriteLine("That is not an option!");
-                Console.WriteLine("Pplease try again!");
+                Console.WriteLine("Please try again!");
                 Console.Clear();
             }
         }

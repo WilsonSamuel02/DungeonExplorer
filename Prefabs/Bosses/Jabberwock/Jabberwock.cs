@@ -8,7 +8,7 @@ namespace DungeonCrawler
 {
     internal class Jabberwock : Entity
     {
-        public static void SetAbilityScore()
+        public void SetAbilityScore()
         {
             Level = 26;
             XP = 90000;

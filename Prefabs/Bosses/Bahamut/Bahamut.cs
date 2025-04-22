@@ -6,10 +6,13 @@ using System.Threading.Tasks;
 
 namespace DungeonCrawler
 {
-    internal class Bahamut : Entity
+    internal class Bahamut : Enemy
     {
-        public static void SetAbilityScore()
+        public Bahamut() : base()
         {
+            Name = "Bahamut";
+            Specie = "Dragon";
+            Size = "Gargantuan";
             Level = 30;
             XP = 155000;
             Health = 585;

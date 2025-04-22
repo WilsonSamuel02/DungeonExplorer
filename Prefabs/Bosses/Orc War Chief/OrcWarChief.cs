@@ -8,7 +8,7 @@ namespace DungeonCrawler
 {
     internal class OrcWarChief : Entity
     {
-        public static void SetAbilityScore()
+        public void SetAbilityScore()
         {
             Level = 4;
             XP = 1100;

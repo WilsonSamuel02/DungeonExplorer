@@ -8,22 +8,20 @@ namespace DungeonCrawler
 {
     internal abstract class Enemy : Entity, IHealth
     {
-        private List<string> _inventory;
+        private List<Item> _inventory;
         public string Description {  get; protected set; }
 
-        public Enemy()
+        public Enemy() : base()
         {
-            this._inventory = new List<string>();
+            this._inventory = new List<Item>();
         }
 
-        public Enemy(string name)
+        public Enemy(string name) : base(name)
         {
-            Name = name;
-            
-            this._inventory = new List<string>();
+            this._inventory = new List<Item>();
         }
 
-        public List<string> Inventory
+        public List<Item> Inventory
         {
             get { return _inventory; }
             set { _inventory = value; }

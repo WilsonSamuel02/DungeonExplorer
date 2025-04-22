@@ -6,10 +6,13 @@ using System.Threading.Tasks;
 
 namespace DungeonCrawler
 {
-    internal class Baphomet : Entity
+    internal class Baphomet : Enemy
     {
-        public static void SetAbilityScore()
+        public Baphomet() : base()
         {
+            Name = "Baphomet";
+            Specie = "Demon";
+            Size = "Huge";
             Level = 22;
             XP = 41000;
             Health = 292;

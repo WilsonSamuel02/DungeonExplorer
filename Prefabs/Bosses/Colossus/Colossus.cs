@@ -6,10 +6,13 @@ using System.Threading.Tasks;
 
 namespace DungeonCrawler
 {
-    internal class Colossus : Entity
+    internal class Colossus : Enemy
     {
-        public static void SetAbilityScore()
+        public Colossus() : base()
         {
+            Name = "Colossus";
+            Specie = "Construct";
+            Size = "Gargantuan";
             Level = 14;
             XP = 11500;
             Health = 184;

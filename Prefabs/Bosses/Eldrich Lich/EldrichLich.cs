@@ -8,8 +8,11 @@ namespace DungeonCrawler
 {
     internal class EldrichLich : Entity
     {
-        public static void SetAbilityScore()
+        public EldrichLich() : base()
         {
+            Name = "Eldrich Lich";
+            Specie = "Abberation";
+            Size = "Medium";
             Level = 18;
             XP = 20000;
             Health = 190;

@@ -8,8 +8,11 @@ namespace DungeonCrawler
 {
     internal class Chimera : Entity
     {
-        public static void SetAbilityScore()
+        public Chimera() : base()
         {
+            Name = "Chimera";
+            Specie = "Monstrosity";
+            Size = "Large";
             Level = 8;
             XP = 3900;
             Health = 135;

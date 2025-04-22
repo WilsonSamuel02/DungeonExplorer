@@ -8,8 +8,11 @@ namespace DungeonCrawler
 {
     internal class Basilisk : Entity
     {
-        public static void SetAbilityScore()
+        public Basilisk() : base()
         {
+            Name = "Basilisk";
+            Specie = "Monstrosity";
+            Size = "Medium";
             Level = 6;
             XP = 2300;
             Health = 52;

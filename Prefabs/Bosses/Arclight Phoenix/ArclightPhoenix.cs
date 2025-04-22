@@ -6,10 +6,13 @@ using System.Threading.Tasks;
 
 namespace DungeonCrawler
 {
-    internal class ArclightPhoenix : Entity
+    internal class ArclightPhoenix : Enemy
     {
-        public static void SetAbilityScore()
+        public ArclightPhoenix() : base()
         {
+            Name = "Arclight Phoenix";
+            Specie = "Monstrosity";
+            Size = "Medium";
             Level = 28;
             XP = 120000;
             Health = 432;

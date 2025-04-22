@@ -8,7 +8,7 @@ namespace DungeonCrawler
 {
     internal class Tiamat : Entity
     {
-        public static void SetAbilityScore()
+        public void SetAbilityScore()
         {
             Level = 30;
             XP = 155000;

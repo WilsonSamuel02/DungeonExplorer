@@ -9,9 +9,9 @@ namespace DungeonCrawler{
 
         public string Name { get; protected set; }
         public string Gender { get; protected set; }
-        public int Level { get; protected set; }
-        public int XP { get; protected set; }
-        public int Gold { get; protected set; }
+        public int Level { get; set; }
+        public int XP { get; set; }
+        public int Gold { get; set; }
         public string Specie { get; protected set; }
         public string Class { get; protected set; }
         public string Size { get; protected set;}
@@ -26,5 +26,23 @@ namespace DungeonCrawler{
         public int Constitution { get; protected set; }
         public int Wisdom { get; protected set; }
         public int Charisma { get; protected set; }
+
+        public Entity() { }
+
+        public Entity(string name, string gender, string combatClass, string species, int level = 1, int xp = 0, int gold = 0)
+        {
+            Name = name;
+            Gender = gender;
+            Level = level;
+            XP = xp;
+            Gold = gold;
+            Class = combatClass;
+            Specie = species;
+        }
+
+        public Entity(string name)
+        {
+            Name = name;
+        }
     }
 }

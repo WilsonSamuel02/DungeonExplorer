@@ -11,34 +11,19 @@ namespace DungeonCrawler
     /// This player class inherits from the Entity class, setting the players name and other variables as needed.
     /// It is also house to certain player specific methods, such as "AccessInventory", "AccessStats", etc.
     /// </remarks>
-    internal class Player : PlayerSetters, IHealth 
+    internal class Player : Entity, IHealth 
     {
 
         private List<Item> _inventory;
 
+        public Player() { }
 
-        /// <summary>
-        /// Empty player constructor.
-        /// </summary>
-        /// <remarks>
-        /// This empty player constructor is the base of the player class, assigning temporary variables as place holders.
-        /// </remarks>
-        public Player(){
-            Name = "Empty Name";
-            Level = 1;
-            XP = 0;
-            Gold = 10;
-            this._inventory = new List<Item>();
-        }
-
-        public Player(string name, string gender, string combatClass, string species)
+        public Player(string name, string gender, string combatClass, string species) : base(name, gender, combatClass, species)
         {
             Name = name;
             Gender = gender;
-            Level = 1;
-            XP = 0;
-            Gold = 10;
             Class = combatClass;
+            Specie = species;
             ClassSelection(combatClass);
             SpeciesSelection(species);
 
@@ -155,6 +140,223 @@ namespace DungeonCrawler
                 Console.WriteLine("Inventory is full");
             }
             return _inventory;
+        }
+
+        private void ClassSelection(string combatClass)
+        {
+            switch (combatClass.ToLower())
+            {
+                case "artificer":
+                    Health = 10;
+                    MaxHealth = 10;
+                    Armour = 11;
+                    Strength = 14;
+                    Dexterity = 13;
+                    Intelligence = 15;
+                    Constitution = 10;
+                    Wisdom = 12;
+                    Charisma = 8;
+                    break;
+                case "barbarian":
+                    Health = 12;
+                    MaxHealth = 12;
+                    Armour = 10;
+                    Strength = 15;
+                    Dexterity = 10;
+                    Intelligence = 12;
+                    Constitution = 14;
+                    Wisdom = 8;
+                    Charisma = 13;
+                    break;
+                case "bard":
+                    Health = 11;
+                    MaxHealth = 11;
+                    Armour = 12;
+                    Strength = 8;
+                    Dexterity = 14;
+                    Intelligence = 13;
+                    Constitution = 12;
+                    Wisdom = 10;
+                    Charisma = 15;
+                    break;
+                case "cleric":
+                    Health = 10;
+                    MaxHealth = 10;
+                    Armour = 11;
+                    Strength = 8;
+                    Dexterity = 12;
+                    Intelligence = 13;
+                    Constitution = 10;
+                    Wisdom = 15;
+                    Charisma = 14;
+                    break;
+                case "druid":
+                    Health = 10;
+                    MaxHealth = 10;
+                    Armour = 11;
+                    Strength = 12;
+                    Dexterity = 13;
+                    Intelligence = 14;
+                    Constitution = 10;
+                    Wisdom = 15;
+                    Charisma = 8;
+                    break;
+                case "fighter":
+                    Health = 12;
+                    MaxHealth = 12;
+                    Armour = 12;
+                    Strength = 13;
+                    Dexterity = 15;
+                    Intelligence = 12;
+                    Constitution = 14;
+                    Wisdom = 10;
+                    Charisma = 8;
+                    break;
+                case "monk":
+                    Health = 10;
+                    MaxHealth = 10;
+                    Armour = 12;
+                    Strength = 13;
+                    Dexterity = 15;
+                    Intelligence = 12;
+                    Constitution = 10;
+                    Wisdom = 14;
+                    Charisma = 8;
+                    break;
+                case "paladin":
+                    Health = 11;
+                    MaxHealth = 11;
+                    Armour = 12;
+                    Strength = 15;
+                    Dexterity = 14;
+                    Intelligence = 8;
+                    Constitution = 12;
+                    Wisdom = 10;
+                    Charisma = 13;
+                    break;
+                case "ranger":
+                    Health = 11;
+                    MaxHealth = 11;
+                    Armour = 12;
+                    Strength = 13;
+                    Dexterity = 15;
+                    Intelligence = 8;
+                    Constitution = 12;
+                    Wisdom = 14;
+                    Charisma = 10;
+                    break;
+                case "rogue":
+                    Health = 11;
+                    MaxHealth = 11;
+                    Armour = 12;
+                    Strength = 10;
+                    Dexterity = 15;
+                    Intelligence = 14;
+                    Constitution = 12;
+                    Wisdom = 8;
+                    Charisma = 13;
+                    break;
+                case "sorcerer":
+                    Health = 12;
+                    MaxHealth = 12;
+                    Armour = 9;
+                    Strength = 10;
+                    Dexterity = 8;
+                    Intelligence = 12;
+                    Constitution = 14;
+                    Wisdom = 13;
+                    Charisma = 15;
+                    break;
+                case "warlock":
+                    Health = 11;
+                    MaxHealth = 11;
+                    Armour = 11;
+                    Strength = 8;
+                    Dexterity = 13;
+                    Intelligence = 10;
+                    Constitution = 12;
+                    Wisdom = 14;
+                    Charisma = 15;
+                    break;
+                case "wizard":
+                    Health = 9;
+                    MaxHealth = 9;
+                    Armour = 11;
+                    Strength = 10;
+                    Dexterity = 12;
+                    Intelligence = 15;
+                    Constitution = 8;
+                    Wisdom = 14;
+                    Charisma = 13;
+                    break;
+            }
+        }
+
+        private void SpeciesSelection(string species)
+        {
+            switch (species.ToLower())
+            {
+                case "dwarf":
+                    Specie = "Dwarf";
+                    Size = "Medium";
+                    Speed = 30;
+                    break;
+                case "elf":
+                    Specie = "Elf";
+                    Size = "medium";
+                    Speed = 30;
+                    break;
+                case "halfling":
+                    Specie = "Halfling";
+                    Size = "small";
+                    Speed = 30;
+                    break;
+                case "human":
+                    Specie = "Human";
+                    Size = "medium";
+                    Speed = 30;
+                    break;
+                case "dragonborn":
+                    Specie = "Dragonborn";
+                    Size = "medium";
+                    Speed = 30;
+                    break;
+                case "gnome":
+                    Specie = "Gnome";
+                    Size = "small";
+                    Speed = 25;
+                    break;
+                case "goliath":
+                    Specie = "Goliath";
+                    Size = "medium";
+                    Speed = 30;
+                    break;
+                case "orc":
+                    Specie = "Orc";
+                    Size = "medium";
+                    Speed = 30;
+                    break;
+                case "tiefling":
+                    Specie = "Tiefling";
+                    Size = "medium";
+                    Speed = 30;
+                    break;
+                case "changeling":
+                    Specie = "Changeling";
+                    Size = "small";
+                    Speed = 30;
+                    break;
+                case "shifter":
+                    Specie = "Shifter";
+                    Size = "medium";
+                    Speed = 30;
+                    break;
+                case "warforged":
+                    Specie = "Warforged";
+                    Size = "medium";
+                    Speed = 30;
+                    break;
+            }
         }
     }
 }

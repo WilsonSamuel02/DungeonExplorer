@@ -8,7 +8,7 @@ namespace DungeonCrawler
 {
     internal class VampireLord : Entity
     {
-        public static void SetAbilityScore()
+        public void SetAbilityScore()
         {
             Level = 20;
             XP = 25000;

@@ -8,7 +8,7 @@ namespace DungeonCrawler
 {
     internal class Oni : Entity
     {
-        public static void SetAbilityScore()
+        public void SetAbilityScore()
         {
             Level = 12;
             XP = 8400;

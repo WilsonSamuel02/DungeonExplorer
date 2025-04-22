@@ -8,8 +8,11 @@ namespace DungeonCrawler
 {
     internal class Hydra : Entity
     {
-        public static void SetAbilityScore()
+        public Hydra() : base()
         {
+            Name = "Hydra";
+            Specie = "Monstrosity";
+            Size = "Huge";
             Level = 10;
             XP = 5900;
             Health = 199;

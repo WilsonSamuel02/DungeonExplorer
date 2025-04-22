@@ -8,7 +8,7 @@ namespace DungeonCrawler
 {
     internal class Manticore : Entity
     {
-        public static void SetAbilityScore()
+        public void SetAbilityScore()
         {
             Level = 16;
             XP = 15000;

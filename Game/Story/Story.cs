@@ -1,19 +1,19 @@
 using System;
 
-namespace DungeonCrawler()
+namespace DungeonCrawler
 {
     internal class Story
     {
-        public static void Introduction(Player player)
+        public static Player Intro(Player player)
         {
             while(true)
             {
                 Console.WriteLine($"Welcome to Kendryl Adventurer {player.Name}");
                 Console.WriteLine();
-                Console.WriteLine("Let us help you get set up here at the Adventurer's Guild!")
+                Console.WriteLine("Let us help you get set up here at the Adventurer's Guild!");
                 Console.WriteLine($"You are a {player.Gender} {player.Specie}.");
                 Console.WriteLine($"You have decided to apply for dungeon raids as a {player.Class}");
-                Console.WriteLine("Is everything I just mentioned correct?")
+                Console.WriteLine("Is everything I just mentioned correct?");
                 string userInput = Console.ReadLine();
             
                 if (userInput.ToLower() == "y" || userInput.ToLower() == "yes")
@@ -34,11 +34,11 @@ namespace DungeonCrawler()
 
             Console.WriteLine();
             Console.WriteLine("Thank you for confirming your details!");
-            Console.WriteLine($"As you are just starting with us you will be level {player.Level}.")
+            Console.WriteLine($"As you are just starting with us you will be level {player.Level}.");
 
             while(true)
             {
-                Console.WriteLine("Are you aware of how leveling work?")
+                Console.WriteLine("Are you aware of how leveling work?");
                 string userInput = Console.ReadLine();
 
                 if (userInput.ToLower() == "n" || userInput.ToLower() == "no")
@@ -51,7 +51,7 @@ namespace DungeonCrawler()
                     Console.WriteLine("The higher level we deem a creature to be, the more experience the adventurer gets.");
                     Console.WriteLine("The more experience the adventurer accumulates, the higher level they will be.");
                     Console.WriteLine("However leveling up isn't the only way to get stronger.");
-                    Console.WriteLine("You must also need to train your different skills.")
+                    Console.WriteLine("You must also need to train your different skills.");
                     break;
                 }
                 else if (userInput.ToLower() == "y" || userInput.ToLower() == "yes")
@@ -74,10 +74,9 @@ namespace DungeonCrawler()
                 if (userInput.ToLower() == "n" || userInput.ToLower() == "no")
                 {
                     Console.Clear();
-                    Console.WriteLine();
                     Console.WriteLine("When an adventurer levels up, we provide professional training in a skill that they desire.");
                     Console.WriteLine("Of course our training will correspond with their current level and current skill level, as training them to mastery would take far too long from the beginning.");
-                    Console.WriteLine("We can train adventurers in the following skills:")
+                    Console.WriteLine("We can train adventurers in the following skills:");
                     Console.WriteLine("- Strength: ");
                     Console.WriteLine("- Dexterity: ");
                     Console.WriteLine("- Intelligence: ");
@@ -103,7 +102,7 @@ namespace DungeonCrawler()
             
             while(true)
             {
-                Console.WriteLine("Is that something we can interest you in?")
+                Console.WriteLine("Is that something we can interest you in?");
                 string userInput = Console.ReadLine();
 
                 if (userInput.ToLower() == "n" || userInput.ToLower() == "no")
@@ -175,51 +174,58 @@ namespace DungeonCrawler()
                 Console.WriteLine("- How do I get better 'weapons'?");
                 Console.WriteLine("- How do I get 'armor'?");
                 Console.WriteLine();
-                Console.WriteLine("- 'Exit'");
+                Console.WriteLine("- 'Leave'");
                 Console.WriteLine();
                 Console.WriteLine("------------------------------");
                 string userInput = Console.ReadLine();
 
                 if (userInput.ToLower() == "gold")
                 {
-                    Console.WriteLine();
+                    Console.Clear();
                     Console.WriteLine("You can make more gold by selling creature parts, items, gems, spare weapons, or spare armor.");
                 }
                 else if (userInput.ToLower() == "weapons")
                 {
-                    Console.WriteLine();
+                    Console.Clear();
                     Console.WriteLine("We have a local weaponsmith that can make weapons for you.");
                     Console.WriteLine("If you bring the materials and gold, the blacksmith can make you specialised weapons.");
                     Console.WriteLine("You can also buy what the blacksmith currently has in stock, however they can be more expensive.");
                 }
                 else if (userInput.ToLower() == "food")
                 {
-                    Console.WriteLine();
+                    Console.Clear();
                     Console.WriteLine("We have a local merchant that can sell you food.");
                     Console.WriteLine("You can also find other random assortments such as potions, spell books, or creature parts.");
                 }
                 else if (userInput.ToLower() == "potions")
                 {
-                    Console.WriteLine();
+                    Console.Clear();
                     Console.WriteLine("We have a local mage that can sell you potions .");
                     Console.WriteLine("They can also sell you spell books, or potential places where you could find certain spell books.");
                 }
                 else if (userInput.ToLower() == "spell")
                 {
-                    Console.WriteLine();
+                    Console.Clear();
                     Console.WriteLine("We have a local mage that can sell you spell books or potential places where you could find certain spell books.");
                     Console.WriteLine("They can also sell you potions.");
                 }
                 else if  (userInput.ToLower() == "armor")
                 {
-                    Console.WriteLine();
+                    Console.Clear();
                     Console.WriteLine("We have a local armorer that can make armor for you.");
                     Console.WriteLine("If you bring the materials and gold, the armorer can make you specialised armor.");
                     Console.WriteLine("You can also buy what the armorer currently has in stock, however they can be more expensive.");
                 }
-                else if (userInput.ToLower() == "exit")
+                else if (userInput.ToLower() == "leave")
                 {
                     Console.Clear();
+                    Console.WriteLine("Thank you for joining the Adventurers Guild.");
+                    Console.WriteLine("We hope to see you often.");
+                    Console.WriteLine("Good Luck!");
+                    Console.WriteLine();
+                    Console.WriteLine("-- Press any key --");
+                    Console.ReadLine();
+
                     break;
                 }
                 else
@@ -229,11 +235,26 @@ namespace DungeonCrawler()
                 }
             }
 
-            Console.WriteLine("Thank you for joining the Adventurers Guild.");
-            Console.WriteLine("We hope to see you often.");
-            Console.WriteLine("Good Luck!");
-
             return player;
+        }
+    
+        public static void Town()
+        {
+            Console.WriteLine("You step outside into the town.");
+            Console.WriteLine("It is bustling with people and merchants from all around the world.");
+            Console.WriteLine();
+            Console.WriteLine("Where would you like to go?");
+            Console.WriteLine();
+            Console.WriteLine("------------------------------");
+            Console.WriteLine();
+            Console.WriteLine("- 'Merchant'");
+            Console.WriteLine("- 'Armorer'");
+            Console.WriteLine("- 'Weaponsmith'");
+            Console.WriteLine("- 'Inn'");
+            Console.WriteLine("- Visit the 'mage'");
+            Console.WriteLine("- 'Dungeon'");
+            Console.WriteLine();
+            Console.WriteLine("------------------------------");
         }
     }
 }

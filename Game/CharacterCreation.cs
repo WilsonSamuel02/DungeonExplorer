@@ -1,11 +1,16 @@
 using System;
+using System.Collections.Generic;
 
 namespace DungeonCrawler
 {
-    public class CharacterCreation
+    internal class CharacterCreation
     {
         public static Player CharacterCreator()
         {
+            string playerName;
+            string gender;
+            string species;
+            string combatClass;
 
             List<string> _species = new List<string>
             {
@@ -38,16 +43,17 @@ namespace DungeonCrawler
                 "sorcerer",
                 "warlock",
                 "wizard",
-            }
+            };
 
             while (true)
             {
-                Console.WriteLine();
+                Console.Clear();
                 Console.WriteLine("What would you like to name your warrior?");
-                string playerName = Console.ReadLine();
+                playerName = Console.ReadLine();
 
                 if (playerName.Length > 0)
                 {
+                    Console.Clear();
                     break;
                 }
                 else
@@ -64,12 +70,13 @@ namespace DungeonCrawler
                 Console.WriteLine("- Male");
                 Console.WriteLine("- Female");
                 Console.WriteLine("- Non-Binary");
-                string gender = Console.ReadLine();
+                gender = Console.ReadLine();
 
                 if (gender.Length > 0)
                 {
                     if (gender.ToLower() == "male" ||  gender.ToLower() == "female" || gender.ToLower() == "non-binary")
                     {
+                        Console.Clear();
                         break;
                     }
                 }
@@ -95,17 +102,18 @@ namespace DungeonCrawler
                 Console.WriteLine("- Changeling");
                 Console.WriteLine("- Shifter");
                 Console.WriteLine("- Warforged");
-                string species = Console.ReadLine();
+                species = Console.ReadLine();
 
                 if (species.Length > 0)
                 {
-                    for (int i = 0; i < _species.Count(); i++)
+                    for (int i = 0; i < _species.Count; i++)
                     {
-                        if (species.ToLower() == specieType[i])
+                        if (species.ToLower() == _species[i])
                         {
+                            Console.Clear();
                             break;
                         }
-                        else if (species.ToLower() != _species[i] && i >= _species.Count())
+                        else if (species.ToLower() != _species[i] && i >= _species.Count)
                         {
                             Console.WriteLine();
                             Console.WriteLine("That is not a valid species!");
@@ -138,23 +146,26 @@ namespace DungeonCrawler
                 Console.WriteLine("- Sorcerer");
                 Console.WriteLine("- Warlock");
                 Console.WriteLine("- Wizard");
-                string combatClass = Console.ReadLine();
+                combatClass = Console.ReadLine();
 
                 if(combatClass.Length > 0)
                 {
-                    for (int i = 0; i < _combatClass.Count(); i++)
+                    for (int i = 0; i < _combatClass.Count; i++)
                     {
                         if (combatClass.ToLower() == _combatClass[i])
                         {
+                            Console.Clear();
                             break;
                         }
-                        else if (combatClass.ToLower() != _combatClass[i] && i >= _combatClass.Count())
+                        else if (combatClass.ToLower() != _combatClass[i] && i >= _combatClass.Count)
                         {
                             Console.WriteLine();
                             Console.WriteLine("That is not a valid species!");
                             Console.WriteLine("Please try again!");
                         }
                     }
+
+                    break;
                 }
                 else
                 {
@@ -162,7 +173,7 @@ namespace DungeonCrawler
                 }
             }
 
-            Player player = new Player(playerName, gender, _combatClass, species);
+            Player player = new Player(playerName, gender, combatClass, species);
 
             return player;
         }

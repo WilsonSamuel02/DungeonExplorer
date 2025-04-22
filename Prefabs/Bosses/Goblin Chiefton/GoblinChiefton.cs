@@ -8,8 +8,11 @@ namespace DungeonCrawler
 {
     internal class GoblinChiefton : Entity
     {
-        public static void SetAbilityScore()
+        public GoblinChiefton() : base()
         {
+            Name = "Goblin Chiefton";
+            Specie = "Goblin";
+            Size = "Medium";
             Level = 2;
             XP = 450;
             Health = 25;
