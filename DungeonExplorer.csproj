@@ -46,6 +46,8 @@
     <Compile Include="Combat System\CombatSystem.cs" />
     <Compile Include="Combat System\ProficiencyBonus.cs" />
     <Compile Include="Game\CharacterCreation.cs" />
+    <Compile Include="Game\Story\ShopNCPs\Merchant.cs" />
+    <Compile Include="Game\Story\ShopNPC.cs" />
     <Compile Include="Game\Story\Story.cs" />
     <Compile Include="Menu\Inventory\Inventory.cs" />
     <Compile Include="Menu\Inventory\Items.cs" />

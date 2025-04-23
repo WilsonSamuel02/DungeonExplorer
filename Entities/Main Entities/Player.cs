@@ -15,6 +15,7 @@ namespace DungeonCrawler
     {
 
         private List<Item> _inventory;
+        public int Floor {  get; set; }
 
         public Player() { }
 
