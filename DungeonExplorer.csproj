@@ -49,6 +49,7 @@
     <Compile Include="Game\Story\ShopNCPs\Merchant.cs" />
     <Compile Include="Game\Story\ShopNPC.cs" />
     <Compile Include="Game\Story\Story.cs" />
+    <Compile Include="Map\MapGenerator.cs" />
     <Compile Include="Menu\Inventory\Inventory.cs" />
     <Compile Include="Menu\Inventory\Items.cs" />
     <Compile Include="Menu\Selections\BossSetters.cs" />
@@ -72,8 +73,7 @@
     <Compile Include="Entities\Entity Features\Traits.cs" />
     <Compile Include="Entities\Entity Features\Species.cs" />
     <Compile Include="Entities\Main Entities\Enemy.cs" />
-    <Compile Include="Map\CoordinateSystem.cs" />
-    <Compile Include="Map\Map.cs" />
+    <Compile Include="Map\BaseRoom.cs" />
     <Compile Include="Map\Rooms\startRoom.cs" />
     <Compile Include="Prefabs\Items\Armor\Armor.cs" />
     <Compile Include="Prefabs\Items\Crafting Equipment\CraftingEquipment.cs" />

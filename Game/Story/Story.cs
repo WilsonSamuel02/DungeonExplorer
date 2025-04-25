@@ -118,6 +118,8 @@ namespace DungeonCrawler
 
                     //Add food and club to player's inventory here
 
+                    player.Inventory.Add(new Club());
+
                     break;
                 }
                 else
@@ -238,23 +240,34 @@ namespace DungeonCrawler
             return player;
         }
     
-        public static void Town()
+        public static void Town(Player player)
         {
             Console.WriteLine("You step outside into the town.");
             Console.WriteLine("It is bustling with people and merchants from all around the world.");
             Console.WriteLine();
-            Console.WriteLine("Where would you like to go?");
-            Console.WriteLine();
-            Console.WriteLine("------------------------------");
-            Console.WriteLine();
-            Console.WriteLine("- 'Merchant'");
-            Console.WriteLine("- 'Armorer'");
-            Console.WriteLine("- 'Weaponsmith'");
-            Console.WriteLine("- 'Inn'");
-            Console.WriteLine("- Visit the 'mage'");
-            Console.WriteLine("- 'Dungeon'");
-            Console.WriteLine();
-            Console.WriteLine("------------------------------");
+
+            while(true)
+            {
+                Console.WriteLine("Where would you like to go?");
+                Console.WriteLine();
+                Console.WriteLine("------------------------------");
+                Console.WriteLine();
+                Console.WriteLine("- 'Merchant'");
+                Console.WriteLine("- 'Armorer'");
+                Console.WriteLine("- 'Weaponsmith'");
+                Console.WriteLine("- 'Inn'");
+                Console.WriteLine("- Visit the 'mage'");
+                Console.WriteLine("- 'Dungeon'");
+                Console.WriteLine();
+                Console.WriteLine("------------------------------");
+                string userInput = Console.ReadLine();
+
+                if (userInput.ToLower() == "merchant")
+                {
+                    Merchant Xzadia = new Merchant(player.Floor);
+                    Xzadia.Shop(player);
+                }
+            }
         }
     }
 }

@@ -13,6 +13,7 @@ namespace DungeonCrawler
             Name = "Short Bow";
             Description = "";
             ItemType = "Simple Ranged";
+            SellAmount = 5;
             DamageType = "Piercing";
             WeaponProperties = new List<string> { "Ammunition", "Two-Handed" };
             Damage = new List<string> { "d6", "1" };

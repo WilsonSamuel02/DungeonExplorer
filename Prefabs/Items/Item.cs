@@ -13,6 +13,7 @@ namespace DungeonCrawler
         public string Name { get; protected set; }
         public string Description { get; protected set; }
         public string ItemType { get; protected set; }
+        public int SellAmount {  get; protected set; }
 
         //Constructor
         public Item()
@@ -20,6 +21,7 @@ namespace DungeonCrawler
             Name = "No Name";
             Description = "No description";
             ItemType = "No Item Type";
+            SellAmount = 0;
         }
     }
 }

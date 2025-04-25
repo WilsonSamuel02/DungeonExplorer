@@ -7,15 +7,17 @@ namespace DungeonCrawler
     {
         public static void Main(string[] args)
         {
-            GameLoop gameLoop = new GameLoop();
-            try
-            {
-                gameLoop.Start();
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine(e);
-            }
+            //GameLoop gameLoop = new GameLoop();
+            //try
+            //{
+            //gameLoop.Start();
+            //}
+            //catch (Exception e)
+            //{
+            //Console.WriteLine(e);
+            //}
+
+            MapGenerator.GenerateFloors(1);
 
         }
     }

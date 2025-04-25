@@ -21,7 +21,7 @@ namespace DungeonCrawler
             Stock = ShopStock(floor);
         }
 
-        protected virtual void Shop()
+        public virtual void Shop(Player player)
         {
             
         }
@@ -40,22 +40,31 @@ namespace DungeonCrawler
             return gold;
         }
 
-        protected virtual void BuyMenu()
+        protected virtual void BuyMenu(Player player)
         {
             Console.Clear();
             Console.WriteLine("This is where the buy menu will go");
         }
 
-        protected virtual void SellShop()
+        protected virtual void SellMenu(Player player)
         {
             Console.Clear();
             Console.WriteLine("This is where the sell menu will go");
         }
 
-        protected virtual void TalkMenu()
+        protected virtual void TalkMenu(Player player)
         {
             Console.Clear();
             Console.WriteLine("This is where the talk menu will go");
+        }
+
+        protected int SellPrice(int total, int percentage)
+        {
+            int calculatedPercentage = (total * percentage) / 100;
+
+            int sellPrice = total - calculatedPercentage;
+
+            return sellPrice;
         }
     }
 }

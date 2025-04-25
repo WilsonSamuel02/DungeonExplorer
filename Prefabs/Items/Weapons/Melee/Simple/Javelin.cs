@@ -13,6 +13,7 @@ namespace DungeonCrawler
             Name = "Javelin";
             Description = "";
             ItemType = "Simple Melee";
+            SellAmount = 5;
             DamageType = "Piercing";
             WeaponProperties = new List<string> { "Thrown", "Slow" };
             Damage = new List<string> { "d6", "1" };

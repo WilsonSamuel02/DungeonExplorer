@@ -13,6 +13,7 @@ namespace DungeonCrawler
             Name = "Light Crossbow";
             Description = "";
             ItemType = "Simple Ranged";
+            SellAmount = 5;
             DamageType = "Piercing";
             WeaponProperties = new List<string> { "Ammunition", "Loading", "Two-Handed" };
             Damage = new List<string> { "d8", "1" };

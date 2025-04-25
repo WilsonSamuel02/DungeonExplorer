@@ -1,7 +1,7 @@
 using System;
 
-namespace DungeonCrawler{
-    public class StartRoom{
+namespace DungeonCrawler.Test{
+    internal class StartRoom{
 
         //temporary main room code
         //The random elements make it easier to create multiple rooms
@@ -16,7 +16,7 @@ namespace DungeonCrawler{
         private string _wallMaterial;
         private string _floorMaterial;
 
-        public StartRoom(){
+        private StartRoom(){
             this.Width = RandomNumber(ranInt);
             this.Length = RandomNumber(ranInt);
             this.Height = RandomNumber(ranInt);

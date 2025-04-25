@@ -13,6 +13,7 @@ namespace DungeonCrawler
             Name = "Frying Pan";
             Description = "";
             ItemType = "Simple Melee";
+            SellAmount = 5;
             DamageType = "Bludgeoning";
             WeaponProperties = new List<string> { "Light", "Versatile" };
             Damage = new List<string> { "d4", "1" };

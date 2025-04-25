@@ -16,7 +16,7 @@ namespace DungeonCrawler{
             Player player = CharacterCreation.CharacterCreator();
 
             player = Story.Intro(player);
-            Story.Town();
+            Story.Town(player);
 
             return gameState;
         }
