@@ -46,10 +46,15 @@
     <Compile Include="Combat System\CombatSystem.cs" />
     <Compile Include="Combat System\ProficiencyBonus.cs" />
     <Compile Include="Game\CharacterCreation.cs" />
+    <Compile Include="Game\Story\Dungeon.cs" />
     <Compile Include="Game\Story\ShopNCPs\Merchant.cs" />
     <Compile Include="Game\Story\ShopNPC.cs" />
     <Compile Include="Game\Story\Story.cs" />
     <Compile Include="Map\MapGenerator.cs" />
+    <Compile Include="Map\Rooms\BeginningRoom.cs" />
+    <Compile Include="Map\Rooms\MerchantRoom.cs" />
+    <Compile Include="Map\Rooms\NormalRoom.cs" />
+    <Compile Include="Map\Rooms\SafeRoom.cs" />
     <Compile Include="Menu\Inventory\Inventory.cs" />
     <Compile Include="Menu\Inventory\Items.cs" />
     <Compile Include="Menu\Selections\BossSetters.cs" />
@@ -74,9 +79,9 @@
     <Compile Include="Entities\Entity Features\Species.cs" />
     <Compile Include="Entities\Main Entities\Enemy.cs" />
     <Compile Include="Map\BaseRoom.cs" />
-    <Compile Include="Map\Rooms\startRoom.cs" />
     <Compile Include="Prefabs\Items\Armor\Armor.cs" />
     <Compile Include="Prefabs\Items\Crafting Equipment\CraftingEquipment.cs" />
+    <Compile Include="Prefabs\Items\Food\Cobs.cs" />
     <Compile Include="Prefabs\Items\Food\Food.cs" />
     <Compile Include="Prefabs\Items\Gear\Gear.cs" />
     <Compile Include="Prefabs\Items\Item.cs" />

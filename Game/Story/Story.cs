@@ -1,3 +1,4 @@
+using Dungeoncrawler;
 using System;
 
 namespace DungeonCrawler
@@ -266,6 +267,30 @@ namespace DungeonCrawler
                 {
                     Merchant Xzadia = new Merchant(player.Floor);
                     Xzadia.Shop(player);
+                }
+                else if (userInput.ToLower() == "armorer")
+                {
+                    Console.WriteLine("The armorer is not in at the moment!");
+                    Console.WriteLine("Please come again later!");
+                }
+                else if (userInput.ToLower() == "weaponsmith")
+                {
+                    Console.WriteLine("The weaponsmith is not in at the moment!");
+                    Console.WriteLine("Please come again later!");
+                }
+                else if (userInput.ToLower() == "inn")
+                {
+                    Console.WriteLine("The inn is currently closed!");
+                    Console.WriteLine("Please come again later!");
+                }
+                else if (userInput.ToLower() == "mage")
+                {
+                    Console.WriteLine("The mage seems to be on a quest!");
+                    Console.WriteLine("Please come again later!");
+                }
+                else if (userInput.ToLower() == "dungeon")
+                {
+                    Dungeon.DungeonGenerator();
                 }
             }
         }

@@ -100,7 +100,7 @@ namespace DungeonCrawler
              *      - Harder to obtain crafting items
              */
 
-            List<Item> stock = new List<Item> { new Club(), new Dagger(), new Handaxe(), new Javelin(), new LightCrossbow(), new ShortBow() };
+            List<Item> stock = new List<Item> { new Club(), new Dagger(), new Handaxe(), new Javelin(), new LightCrossbow(), new ShortBow(), new Cobs() };
 
             return stock;
         }

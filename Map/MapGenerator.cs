@@ -337,11 +337,5 @@ namespace DungeonCrawler
 
             return exitDirections;
         }
-    
-        protected static void PredeterminedFloors(int floor)
-        {
-            Console.WriteLine();
-            Console.WriteLine("You have entered the dungeon")
-        }
     }
 }

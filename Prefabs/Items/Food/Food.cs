@@ -6,7 +6,12 @@ using System.Threading.Tasks;
 
 namespace DungeonCrawler
 {
-    internal class Food
+    internal abstract class Food : Item
     {
+        public int HealAmount {  get; protected set; }
+        public Food()
+        {
+            HealAmount = 0;
+        }
     }
 }
