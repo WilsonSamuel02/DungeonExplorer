@@ -12,7 +12,8 @@ namespace DungeonCrawler
         {
             Name = "Club";
             Description = "";
-            ItemType = "Simple Melee";
+            ItemType = "Weapon";
+            WeaponType = "Simple Melee";
             SellAmount = 5;
             DamageType = "Bludgeoning";
             WeaponProperties = new List<string> { "Light", "Slow" };

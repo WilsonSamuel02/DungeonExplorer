@@ -64,7 +64,6 @@ namespace DungeonCrawler
 
             while (true)
             {
-                Console.WriteLine();
                 Console.WriteLine("What gender would you like your warrior to be?");
                 Console.WriteLine();
                 Console.WriteLine("- Male");
@@ -83,12 +82,13 @@ namespace DungeonCrawler
                 else
                 {
                     Console.WriteLine("Please select a valid option before going forward!");
+                    Console.WriteLine();
                 }
             }
+            bool specieSelection = false;
 
             while (true)
             {
-                Console.WriteLine();
                 Console.WriteLine("What species would you like your warrior to be?");
                 Console.WriteLine("- Dwarf");
                 Console.WriteLine("- Elf");
@@ -104,34 +104,35 @@ namespace DungeonCrawler
                 Console.WriteLine("- Warforged");
                 species = Console.ReadLine();
 
-                if (species.Length > 0)
+                if (species.Length <= 0)
                 {
-                    for (int i = 0; i < _species.Count; i++)
-                    {
-                        if (species.ToLower() == _species[i])
-                        {
-                            Console.Clear();
-                            break;
-                        }
-                        else if (species.ToLower() != _species[i] && i >= _species.Count)
-                        {
-                            Console.WriteLine();
-                            Console.WriteLine("That is not a valid species!");
-                            Console.WriteLine("Please try again!");
-                        }
-                    }
+                    Console.WriteLine("Please select a specie before going forward!");
+                }
 
-                    break;
-                }
-                else
+                foreach (string specie in _species)
                 {
-                    Console.WriteLine("Please select a class before going forward!");
+                    if (species.ToLower() == specie.ToLower())
+                    {
+                        Console.Clear();
+                        specieSelection = true;
+                        break;
+                    }
                 }
+
+                if (!specieSelection)
+                {
+                    Console.WriteLine();
+                    Console.WriteLine("That is not an option");
+                    Console.WriteLine("Please try again!");
+                    Console.WriteLine();
+                }
+                else break;
             }
+
+            bool classSelection = false;
 
             while (true)
             {
-                Console.WriteLine();
                 Console.WriteLine("What class would you like your warrior to be?");
                 Console.WriteLine("- Artificer");
                 Console.WriteLine("- Barbarian");
@@ -148,29 +149,29 @@ namespace DungeonCrawler
                 Console.WriteLine("- Wizard");
                 combatClass = Console.ReadLine();
 
-                if(combatClass.Length > 0)
-                {
-                    for (int i = 0; i < _combatClass.Count; i++)
-                    {
-                        if (combatClass.ToLower() == _combatClass[i])
-                        {
-                            Console.Clear();
-                            break;
-                        }
-                        else if (combatClass.ToLower() != _combatClass[i] && i >= _combatClass.Count)
-                        {
-                            Console.WriteLine();
-                            Console.WriteLine("That is not a valid species!");
-                            Console.WriteLine("Please try again!");
-                        }
-                    }
-
-                    break;
-                }
-                else
+                if(combatClass.Length <= 0)
                 {
                     Console.WriteLine("Please select a class before going forward!");
                 }
+
+                foreach (string combat in _combatClass)
+                {
+                    if (combatClass.ToLower() == combat.ToLower())
+                    {
+                        Console.Clear();
+                        classSelection = true;
+                        break;
+                    }
+                }
+
+                if (!classSelection)
+                {
+                    Console.WriteLine();
+                    Console.WriteLine("That is not an option");
+                    Console.WriteLine("Please try again!");
+                    Console.WriteLine();
+                }
+                else break;
             }
 
             Player player = new Player(playerName, gender, combatClass, species);

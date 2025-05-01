@@ -57,9 +57,6 @@
     <Compile Include="Map\Rooms\MerchantRoom.cs" />
     <Compile Include="Map\Rooms\NormalRoom.cs" />
     <Compile Include="Map\Rooms\SafeRoom.cs" />
-    <Compile Include="Menu\Inventory\Inventory.cs" />
-    <Compile Include="Menu\Inventory\Items.cs" />
-    <Compile Include="Menu\Selections\BossSetters.cs" />
     <Compile Include="Prefabs\Bosses\Arclight Phoenix\ArclightPhoenix.cs" />
     <Compile Include="Prefabs\Bosses\Bahamut\Bahamut.cs" />
     <Compile Include="Prefabs\Bosses\Baphomet\Baphomet.cs" />

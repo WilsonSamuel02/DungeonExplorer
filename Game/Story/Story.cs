@@ -1,4 +1,3 @@
-using Dungeoncrawler;
 using System;
 
 namespace DungeonCrawler
@@ -33,7 +32,7 @@ namespace DungeonCrawler
                 }
             }
 
-            Console.WriteLine();
+            Console.Clear();
             Console.WriteLine("Thank you for confirming your details!");
             Console.WriteLine($"As you are just starting with us you will be level {player.Level}.");
 
@@ -45,7 +44,6 @@ namespace DungeonCrawler
                 if (userInput.ToLower() == "n" || userInput.ToLower() == "no")
                 {
                     Console.Clear();
-                    Console.WriteLine();
                     Console.WriteLine("Levels are how we assess how strong an adventurer is.");
                     Console.WriteLine("Each adventurer is given a kill tracker, that automatically tracks how many creatures they have defeated.");
                     Console.WriteLine("Each creature has a different amount of experience.");
@@ -53,6 +51,7 @@ namespace DungeonCrawler
                     Console.WriteLine("The more experience the adventurer accumulates, the higher level they will be.");
                     Console.WriteLine("However leveling up isn't the only way to get stronger.");
                     Console.WriteLine("You must also need to train your different skills.");
+                    Console.ReadLine();
                     break;
                 }
                 else if (userInput.ToLower() == "y" || userInput.ToLower() == "yes")
@@ -68,7 +67,7 @@ namespace DungeonCrawler
 
             while(true)
             {
-                Console.WriteLine();
+                Console.Clear();
                 Console.WriteLine("Are you aware of how training your skills works?");
                 string userInput = Console.ReadLine();
 
@@ -84,6 +83,7 @@ namespace DungeonCrawler
                     Console.WriteLine("- Constitution: ");
                     Console.WriteLine("- Wisdom: ");
                     Console.WriteLine("- Charisma: ");
+                    Console.ReadLine();
                     break;
                 }
                 else if (userInput.ToLower() == "y" || userInput.ToLower() == "yes")
@@ -97,7 +97,7 @@ namespace DungeonCrawler
                 }
             }
 
-            Console.WriteLine();
+            Console.Clear();
             Console.WriteLine("Now that we have completed your orientation, we can get you set up to start on your adventure.");
             Console.WriteLine("To help new adventurers to get started we offer a free care package, that includes some money, food and a simple weapon");
             
@@ -115,11 +115,17 @@ namespace DungeonCrawler
                 {
                     Console.WriteLine();
                     Console.WriteLine("--Recieved 20x Gold, 5x Cobs, 1x Club--");
+                    Console.ReadLine();
                     player.Gold += 20;
 
                     //Add food and club to player's inventory here
 
-                    player.Inventory.Add(new Club());
+                    player.Inventory[0].Add(new Club());
+
+                    for (int i = 0; i < 5; i++)
+                    {
+                        player.Inventory[1].Add(new Cobs());
+                    }
 
                     break;
                 }
@@ -130,6 +136,7 @@ namespace DungeonCrawler
                 }
             }
 
+            Console.Clear();
             Console.WriteLine("As you are now part of the adventurer's guild we also offer a room for 5 gold per night in our local tavern.");
 
             while(true)
@@ -158,7 +165,7 @@ namespace DungeonCrawler
                 }
             }
 
-            Console.WriteLine();
+            Console.Clear();
             Console.WriteLine("Your orientation to the Adventurers Guild has now concluded.");
 
             while(true)
@@ -186,6 +193,8 @@ namespace DungeonCrawler
                 {
                     Console.Clear();
                     Console.WriteLine("You can make more gold by selling creature parts, items, gems, spare weapons, or spare armor.");
+                    Console.ReadLine();
+                    Console.Clear();
                 }
                 else if (userInput.ToLower() == "weapons")
                 {
@@ -193,24 +202,32 @@ namespace DungeonCrawler
                     Console.WriteLine("We have a local weaponsmith that can make weapons for you.");
                     Console.WriteLine("If you bring the materials and gold, the blacksmith can make you specialised weapons.");
                     Console.WriteLine("You can also buy what the blacksmith currently has in stock, however they can be more expensive.");
+                    Console.ReadLine();
+                    Console.Clear();
                 }
                 else if (userInput.ToLower() == "food")
                 {
                     Console.Clear();
                     Console.WriteLine("We have a local merchant that can sell you food.");
                     Console.WriteLine("You can also find other random assortments such as potions, spell books, or creature parts.");
+                    Console.ReadLine();
+                    Console.Clear();
                 }
                 else if (userInput.ToLower() == "potions")
                 {
                     Console.Clear();
                     Console.WriteLine("We have a local mage that can sell you potions .");
                     Console.WriteLine("They can also sell you spell books, or potential places where you could find certain spell books.");
+                    Console.ReadLine();
+                    Console.Clear();
                 }
                 else if (userInput.ToLower() == "spell")
                 {
                     Console.Clear();
                     Console.WriteLine("We have a local mage that can sell you spell books or potential places where you could find certain spell books.");
                     Console.WriteLine("They can also sell you potions.");
+                    Console.ReadLine();
+                    Console.Clear();
                 }
                 else if  (userInput.ToLower() == "armor")
                 {
@@ -218,6 +235,8 @@ namespace DungeonCrawler
                     Console.WriteLine("We have a local armorer that can make armor for you.");
                     Console.WriteLine("If you bring the materials and gold, the armorer can make you specialised armor.");
                     Console.WriteLine("You can also buy what the armorer currently has in stock, however they can be more expensive.");
+                    Console.ReadLine();
+                    Console.Clear();
                 }
                 else if (userInput.ToLower() == "leave")
                 {
@@ -243,6 +262,7 @@ namespace DungeonCrawler
     
         public static void Town(Player player)
         {
+            Console.Clear();
             Console.WriteLine("You step outside into the town.");
             Console.WriteLine("It is bustling with people and merchants from all around the world.");
             Console.WriteLine();

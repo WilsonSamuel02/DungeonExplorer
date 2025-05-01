@@ -144,12 +144,21 @@ namespace DungeonCrawler
                 {
                     foreach (Item item in Stock)
                     {
-                        if (userInput.ToLower() == item.Name.ToLower())
+                        if (userInput.ToLower() == item.Name.ToLower() && item.ItemType == "Weapon")
                         {
                             player.Gold -= item.SellAmount;
                             this.Gold += item.SellAmount;
 
-                            player.Inventory.Add(item);
+                            player.Inventory[0].Add(item);
+                            Stock.Remove(item);
+                            break;
+                        }
+                        else if (userInput.ToLower() == item.Name.ToLower() && item.ItemType == "Food")
+                        {
+                            player.Gold -= item.SellAmount;
+                            this.Gold += item.SellAmount;
+
+                            player.Inventory[1].Add(item);
                             Stock.Remove(item);
                             break;
                         }
@@ -176,9 +185,12 @@ namespace DungeonCrawler
                 Console.WriteLine("------------------------------");
                 Console.WriteLine();
 
-                foreach (Item item in player.Inventory)
+                foreach (List<Item> inventory in player.Inventory)
                 {
-                    Console.WriteLine($"- '{item.Name}' -- Price {SellPrice(item.SellAmount, 20)}");
+                    foreach (Item item in inventory)
+                    {
+                        Console.WriteLine($"- '{item.Name}' -- Price {SellPrice(item.SellAmount, 20)}");
+                    }
                 }
 
                 Console.WriteLine();
@@ -195,16 +207,27 @@ namespace DungeonCrawler
                 if (userInput.ToLower() == "back") Shop(player);
                 else
                 {
-                    foreach (Item item in player.Inventory)
+                    foreach (List<Item> inventory in player.Inventory)
                     {
-                        if (userInput.ToLower() == item.Name.ToLower())
+                        foreach (Item item in inventory)
                         {
-                            player.Gold += SellPrice(item.SellAmount, 20);
-                            this.Gold -= SellPrice(item.SellAmount, 20);
+                            if (userInput.ToLower() == item.Name.ToLower())
+                            {
+                                player.Gold += SellPrice(item.SellAmount, 20);
+                                this.Gold -= SellPrice(item.SellAmount, 20);
 
-                            player.Inventory.Remove(item);
-                            Stock.Add(item);
-                            break;
+                                if (item.ItemType == "Weapon")
+                                {
+                                    player.Inventory[0].Remove(item);
+                                    Stock.Add(item);
+                                }
+                                else if (item.ItemType == "Food")
+                                {
+                                    player.Inventory[1].Remove(item);
+                                    Stock.Add(item);
+                                }
+                                break;
+                            }
                         }
                     }
                 }  

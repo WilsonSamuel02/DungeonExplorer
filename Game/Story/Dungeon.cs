@@ -1,11 +1,10 @@
-﻿using DungeonCrawler;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Dungeoncrawler
+namespace DungeonCrawler
 {
     internal class Dungeon
     {
@@ -17,18 +16,31 @@ namespace Dungeoncrawler
             {
                 new BeginningRoom(),
                 new MerchantRoom(),
-                new  NormalRoom(),
+                new NormalRoom(),
                 new SafeRoom(),
             };
+
+            Console.Clear();
+            Console.WriteLine("-- You have entered the dungeon -- ");
+            Console.WriteLine();
+
+            Random random = new Random();
+            int roomRandomiser = random.Next(1, 3);
+
+            RoomMenu(player, rooms[0]);
+            RoomMenu(player, rooms[roomRandomiser]);
+            RoomMenu(player, rooms[roomRandomiser]);
+            RoomMenu(player, rooms[roomRandomiser]);
+            RoomMenu(player, rooms[roomRandomiser]);
+            RoomMenu(player, rooms[roomRandomiser]);
 
         }
 
         private static void RoomMenu(Player player, BaseRoom room)
         {
-            while (true){
+            MerchantRoom merchant = new MerchantRoom();
 
-                Console.WriteLine("-- You have entered the dungeon -- ");
-                Console.WriteLine();
+            while (true){
 
                 Console.WriteLine("-- What would you like to do? --");
                 Console.WriteLine();
@@ -43,19 +55,23 @@ namespace Dungeoncrawler
                 if (userInput.Length > 0){
                     if (userInput.ToLower() == "observe")
                     {
+                        Console.Clear();
                         room.GetDescription();
                         break;
                     }
                     else if (userInput.ToLower() == "description")
                     {
+                        Console.Clear();
                         player.GetDescription();
                     }
                     else if (userInput.ToLower() == "inventory")
                     {
+                        Console.Clear();
                         player.AccessInventory();
                     }
                     else if (userInput.ToLower() == "stats")
                     {
+                        Console.Clear();
                         player.AccessStats();
                     }
                     else if (userInput.ToLower() == "leave")
@@ -75,7 +91,62 @@ namespace Dungeoncrawler
                 
             }
 
-            if (room.EnemiesAmount == 0)
+            if (room.RoomType == "Merchant")
+            {
+                while (true)
+                {
+                    Console.WriteLine("-- What would you like to do? --");
+                    Console.WriteLine();
+                    Console.WriteLine("- 'Shop'");
+                    Console.WriteLine("- Go to 'next room'");
+                    Console.WriteLine("- Get own 'description'");
+                    Console.WriteLine("- Access 'Inventory'");
+                    Console.WriteLine("- Check 'Stats'");
+                    Console.WriteLine("- 'Leave'");
+                    string userInput = Console.ReadLine();
+
+                    if (userInput.Length > 0)
+                    {
+                        if (userInput.ToLower() == "shop")
+                        {
+                            MerchantRoom.Shop(player);
+                        }
+                        else if (userInput.ToLower() == "next room")
+                        {
+                            Console.WriteLine("You decide to open the creaky heavy door.");
+                            break;
+                        }
+                        else if (userInput.ToLower() == "description")
+                        {
+                            player.GetDescription();
+                        }
+                        else if (userInput.ToLower() == "inventory")
+                        {
+                            player.AccessInventory();
+                        }
+                        else if (userInput.ToLower() == "stats")
+                        {
+                            player.AccessStats();
+                        }
+                        else if (userInput.ToLower() == "leave")
+                        {
+                            Console.WriteLine("You decided to leave and live another day!");
+
+                        }
+                        else
+                        {
+                            Console.WriteLine("That is not an option!");
+                            Console.WriteLine("Please try again!");
+                        }
+                    }
+                    else
+                    {
+                        Console.WriteLine("That is not an option!");
+                        Console.WriteLine("Please try again!");
+                    }
+                }
+            }
+            else if (room.EnemiesAmount == 0)
             {
                 while (true){
                     Console.WriteLine("-- What would you like to do? --");
@@ -118,7 +189,7 @@ namespace Dungeoncrawler
             }
             else
             {
-                while(true)
+                while (true)
                 {
                     Console.WriteLine("-- What would you like to do? --");
                     Console.WriteLine();
@@ -134,11 +205,11 @@ namespace Dungeoncrawler
                     {
                         if (userInput.ToLower() == "attack")
                         {
-                           List<Enemy> enemies = new List<Enemy>();
-                           enemies = SpawnEnemies(room.EnemiesAmount);
+                            List<Enemy> enemies = new List<Enemy>();
+                            enemies = SpawnEnemies(room.EnemiesAmount);
 
-                           foreach (Enemy enemy in enemies)
-                           {
+                            foreach (Enemy enemy in enemies)
+                            {
                                 Console.WriteLine($"- Level {enemy.Level} {enemy}");
                            }
 
@@ -165,7 +236,7 @@ namespace Dungeoncrawler
                             break;
                         }
                         else if (userInput.ToLower() == "description")
-                        {   
+                        {
                             player.GetDescription();
                         }
                         else if (userInput.ToLower() == "inventory")

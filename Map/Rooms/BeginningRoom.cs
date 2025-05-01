@@ -11,7 +11,7 @@ namespace DungeonCrawler
     {
         public BeginningRoom() : base()
         {
-            RoomType = "Beginning Room";
+            RoomType = "Beginning";
             EnemiesAmount = 0;
             Width = RandomNumber(ranInt);
             Height = RandomNumber(ranInt);

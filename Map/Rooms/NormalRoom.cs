@@ -13,9 +13,8 @@ namespace DungeonCrawler
 
         public NormalRoom() : base()
         {
-            RoomType = "Beginning Room";
+            RoomType = "Normal";
             EnemiesAmount = enemiesRandom.Next(1, 5);
-            Exits = RandomExits(Exits);
             Width = RandomNumber(ranInt);
             Height = RandomNumber(ranInt);
             Length = RandomNumber(ranInt);

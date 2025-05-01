@@ -14,7 +14,7 @@ namespace DungeonCrawler
     internal class Player : Entity, IHealth, IPlayerAtatck
     {
 
-        private List<Item> _inventory;
+        private List<List<Item>> _inventory;
         public int Floor {  get; set; }
 
         public Player(string name, string gender, string combatClass, string species) : base(name, gender, combatClass, species)
@@ -27,13 +27,29 @@ namespace DungeonCrawler
             SpeciesSelection(species);
             Equipped = new Club();
 
-            this._inventory = new List<Item>();
+            this._inventory = new List<List<Item>>()
+            {
+                new List<Item>(),   //Weapons list
+                new List<Item>()    //Food List
+            };
         }
 
-        public List<Item> Inventory
+        public List<List<Item>> Inventory
         {
             get { return _inventory; }
             set { _inventory = value; }
+        }
+
+        public void Attack(Enemy enemy)
+        {
+            Random attackRoll = new Random();
+
+            int attackDamage = attackRoll.Next(1, 20);
+
+            if (attackDamage > enemy.Armour)
+            {
+
+            }
         }
 
         public void TakeDamage(int damageAmount)
@@ -79,17 +95,172 @@ namespace DungeonCrawler
                 Console.ReadLine();
             }
             else{
-                Console.WriteLine();
-                Console.WriteLine("---- Inventory ----");
-                Console.WriteLine();
-                Console.WriteLine($"Gold: {Gold}");
-                Console.WriteLine();
+                while (true)
+                {
+                    Console.WriteLine();
+                    Console.WriteLine("---- Inventory ----");
+                    Console.WriteLine();
+                    Console.WriteLine($"Gold: {Gold}");
+                    Console.WriteLine();
+                    Console.WriteLine("- Weapons");
+                    Console.WriteLine("- Food");
+                    Console.WriteLine();
+                    Console.WriteLine("       Leave");
+                    Console.WriteLine("-------------------");
+                    string userInput = Console.ReadLine();
 
-                foreach(var item in _inventory){
-                    Console.WriteLine($"- {item.Name}");
+                    if (userInput.ToLower() == "weapons")
+                    {
+                        while (true)
+                        {
+                            Console.WriteLine("---- Inventory ----");
+                            Console.WriteLine();
+                            Console.WriteLine($"Gold: {Gold}");
+                            Console.WriteLine();
+
+                            foreach (Weapons weapon in _inventory[0])
+                            {
+                                Console.WriteLine($"- {weapon.Name}");
+                            }
+                            Console.WriteLine();
+                            Console.WriteLine("        Back");
+                            Console.WriteLine();
+                            Console.WriteLine("-------------------");
+                            Console.WriteLine();
+                            Console.WriteLine("-- Which weapon would you like to select? --");
+                            string weaponInput = Console.ReadLine();
+
+                            if (weaponInput.ToLower() == "back") break;
+
+                            foreach (Weapons weapon in _inventory[0])
+                            {
+                                while (true)
+                                {
+                                        if (weaponInput.ToLower() == weapon.Name.ToLower())
+                                    {
+                                        Console.WriteLine("-------------------");
+                                        Console.WriteLine();
+                                        Console.WriteLine($"- {weapon.Name}");
+                                        Console.WriteLine($"- {weapon.WeaponType}");
+                                        Console.WriteLine($"- Sell: {weapon.SellAmount}");
+                                        Console.WriteLine($"- Damage: {weapon.Damage}");
+                                        Console.WriteLine($"- {weapon.DamageType}");
+                                        Console.WriteLine();
+                                        Console.WriteLine("        Back");
+                                        Console.WriteLine();
+                                        Console.WriteLine("-------------------");
+                                        Console.WriteLine($"-- Would you like to equip the {weapon.Name}? --");
+                                        Console.WriteLine();
+                                        Console.WriteLine("- 'Yes'");
+                                        Console.WriteLine("- 'No'");
+                                        userInput = Console.ReadLine();
+                                    
+                                        if (userInput.ToLower() == "yes" || userInput.ToLower() == "y")
+                                        {
+                                            Equipped = weapon;
+                                            break;
+                                        }
+                                        else if (userInput.ToLower() == "no" || userInput.ToLower() == "n" || userInput.ToLower() == "back")
+                                        {
+                                            break;
+                                        }
+                                        else
+                                        {
+                                            Console.WriteLine("That is not an option.");
+                                            Console.WriteLine("Please try again!");
+                                        }
+                                    }
+                                    else
+                                    {
+                                        Console.WriteLine("That is not an option.");
+                                        Console.WriteLine("Please try again!");
+                                    }
+                                    break;
+                                }
+                            }
+                        }
+                    }
+                    else if (userInput.ToLower() == "food")
+                    {
+                        while (true)
+                        {
+                            Console.WriteLine("---- Inventory ----");
+                            Console.WriteLine();
+                            Console.WriteLine($"Gold: {Gold}");
+                            Console.WriteLine();
+
+                            foreach (Food food in _inventory[1])
+                            {
+                                Console.WriteLine($"- {food.Name}");
+                            }
+                            Console.WriteLine();
+                            Console.WriteLine("        Back");
+                            Console.WriteLine();
+                            Console.WriteLine("-------------------");
+                            Console.WriteLine();
+                            Console.WriteLine("-- Select an option --");
+                            string foodInput = Console.ReadLine();
+
+                            if (foodInput.ToLower() == "back") break;
+
+                            foreach (Food food in _inventory[1])
+                            {
+                                while (true)
+                                {
+                                    if (foodInput.ToLower() == food.Name.ToLower())
+                                    {
+                                        Console.WriteLine("-------------------");
+                                        Console.WriteLine();
+                                        Console.WriteLine($"- {food.Name}");
+                                        Console.WriteLine($"- {food.ItemType}");
+                                        Console.WriteLine($"- {food.SellAmount}");
+                                        Console.WriteLine($"- {food.HealAmount}");
+                                        Console.WriteLine();
+                                        Console.WriteLine("        Back");
+                                        Console.WriteLine();
+                                        Console.WriteLine("-------------------");
+                                        Console.WriteLine("-- Would you like to heal? --");
+                                        Console.WriteLine();
+                                        Console.WriteLine("- 'Yes'");
+                                        Console.WriteLine("- 'No'");
+                                        userInput = Console.ReadLine();
+                                    
+                                        if (userInput.ToLower() == "yes" || userInput.ToLower() == "y")
+                                        {
+                                            Health += food.HealAmount;
+                                            if (Health > MaxHealth) Health = MaxHealth;
+                                            break;
+                                        }
+                                        else if (userInput.ToLower() == "no" || userInput.ToLower() == "n" || userInput.ToLower() == "back")
+                                        {
+                                            break;
+                                        }
+                                        else
+                                        {
+                                            Console.WriteLine("That is not an option.");
+                                            Console.WriteLine("Please try again!");
+                                        }
+                                    }
+                                    else
+                                    {
+                                        Console.WriteLine("That is not an option.");
+                                        Console.WriteLine("Please try again!");
+                                    }
+                                    break;
+                                }
+                            }
+                        }
+                    }
+                    else if (userInput.ToLower() == "leave")
+                    {
+                        break;
+                    }
+                    else
+                    {
+                        Console.WriteLine("That is not an option.");
+                        Console.WriteLine("Please try again!");
+                    }
                 }
-                Console.WriteLine("-------------------");
-                Console.ReadLine();
             }
         }
 
@@ -145,13 +316,19 @@ namespace DungeonCrawler
         /// <returns>
         /// Inventory list.
         /// </returns>
-        public List<Item> PickupItem(Item item){
+        public List<List<Item>> PickupItem(Item item){
             
             
-            if (_inventory.Count < 5){
-                _inventory.Add(item);
+            if (_inventory[0].Count < 5 && item.ItemType == "Weapon")
+            {
+                _inventory[0].Add(item);
             }
-            else{
+            if (_inventory[1].Count < 5 && item.ItemType == "Food")
+            {
+                _inventory[1].Add(item);
+            }
+            else
+            {
                 Console.WriteLine("Inventory is full");
             }
             return _inventory;

@@ -10,7 +10,7 @@ namespace DungeonCrawler
     {
         public SafeRoom() : base()
         {
-            RoomType = "Safe Room";
+            RoomType = "Safe";
             EnemiesAmount = 0;
             Width = RandomNumber(ranInt);
             Height = RandomNumber(ranInt);

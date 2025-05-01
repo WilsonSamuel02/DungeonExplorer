@@ -8,7 +8,7 @@ namespace DungeonCrawler
 {
     internal class Weapons : Item
     {
-
+        public string WeaponType { get; protected set; }
         public string DamageType { get; protected set; }
         public List<string> WeaponProperties { get; protected set; }
         public int Damage {  get; protected set; }

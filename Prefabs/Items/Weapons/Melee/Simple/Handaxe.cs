@@ -12,7 +12,8 @@ namespace DungeonCrawler
         {
             Name = "Hand Axe";
             Description = "";
-            ItemType = "Simple Melee";
+            ItemType = "Weapon";
+            WeaponType = "Simple Melee";
             SellAmount = 5;
             DamageType = "Slashing";
             WeaponProperties = new List<string> { "Light", "Thrown" };
