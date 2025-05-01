@@ -44,6 +44,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Combat System\CombatSystem.cs" />
+    <Compile Include="Combat System\IEnemyAttack.cs" />
+    <Compile Include="Combat System\IPlayerAtatck.cs" />
     <Compile Include="Combat System\ProficiencyBonus.cs" />
     <Compile Include="Game\CharacterCreation.cs" />
     <Compile Include="Game\Story\Dungeon.cs" />
@@ -73,9 +75,7 @@
     <Compile Include="Prefabs\Bosses\Orc War Chief\OrcWarChief.cs" />
     <Compile Include="Prefabs\Bosses\Tiamat\Tiamat.cs" />
     <Compile Include="Prefabs\Bosses\Vampire Lord\VampireLord.cs" />
-    <Compile Include="Entities\CombatClasses\MonsterLoot.cs" />
     <Compile Include="Entities\Entity Features\IHealth.cs" />
-    <Compile Include="Entities\Entity Features\Traits.cs" />
     <Compile Include="Entities\Entity Features\Species.cs" />
     <Compile Include="Entities\Main Entities\Enemy.cs" />
     <Compile Include="Map\BaseRoom.cs" />
@@ -98,6 +98,9 @@
     <Compile Include="Prefabs\Items\Weapons\Weapons.cs" />
     <Compile Include="Prefabs\Magic\Magic.cs" />
     <Compile Include="Prefabs\Magic\Spells\Spell.cs" />
+    <Compile Include="Prefabs\Monsters\Goblin.cs" />
+    <Compile Include="Prefabs\Monsters\GoblinArcher.cs" />
+    <Compile Include="Prefabs\Monsters\GoblinMage.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Entities\Entity.cs" />
     <Compile Include="Entities\Main Entities\Player.cs" />
@@ -109,7 +112,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <None Include="Entities\CombatClasses\IMonsterDrop" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Combat System\Spells\" />
@@ -117,7 +119,6 @@
     <Folder Include="Prefabs\Items\Weapons\Melee\Martial\" />
     <Folder Include="Prefabs\Items\Weapons\Ranged\Ammunition\" />
     <Folder Include="Prefabs\Items\Weapons\Ranged\Martial\" />
-    <Folder Include="Prefabs\Monsters\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

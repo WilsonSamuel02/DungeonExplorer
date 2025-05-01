@@ -1,9 +1,0 @@
-using System;
-
-namespace DungeonCrawler
-{
-    internal interface IMonsterDrop
-    {
-        void MonsterDrop(string monsterSpecies)
-    }
-}

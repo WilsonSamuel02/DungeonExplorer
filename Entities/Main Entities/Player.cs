@@ -11,13 +11,11 @@ namespace DungeonCrawler
     /// This player class inherits from the Entity class, setting the players name and other variables as needed.
     /// It is also house to certain player specific methods, such as "AccessInventory", "AccessStats", etc.
     /// </remarks>
-    internal class Player : Entity, IHealth 
+    internal class Player : Entity, IHealth, IPlayerAtatck
     {
 
         private List<Item> _inventory;
         public int Floor {  get; set; }
-
-        public Player() { }
 
         public Player(string name, string gender, string combatClass, string species) : base(name, gender, combatClass, species)
         {
@@ -27,6 +25,7 @@ namespace DungeonCrawler
             Specie = species;
             ClassSelection(combatClass);
             SpeciesSelection(species);
+            Equipped = new Club();
 
             this._inventory = new List<Item>();
         }
@@ -45,6 +44,21 @@ namespace DungeonCrawler
         public void Heal(int healAmount)
         {
             Health += healAmount;
+        }
+
+        public void Attack(Enemy enemy)
+        {
+            Random random = new Random();
+            int attackRoll = random.Next(1, 20);
+
+            int bonusAttack = ProficiencyBonus.CalculateAttackProficiency(this);
+
+            int attack = attackRoll + bonusAttack;
+
+            if (attack > enemy.Armour)
+            {
+                random.Next(1, Equipped.Damage);
+            }
         }
 
         /// <summary>

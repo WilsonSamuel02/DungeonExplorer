@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DungeonCrawler
 {
-    internal abstract class Enemy : Entity, IHealth
+    internal abstract class Enemy : Entity, IHealth, IPlayerAttack
     {
         private List<Item> _inventory;
         public string Description {  get; protected set; }
@@ -35,6 +35,26 @@ namespace DungeonCrawler
         public void Heal(int healAmount)
         {
             Health += healAmount;
+        }
+
+        public void Attack(Player player)
+        {
+            Random random = new Random();
+            int attackRoll = random.Next(1, 20);
+
+            int bonusAttack = ProficiencyBonus.CalculateAttackProficiency(this);
+
+            int attack = attackRoll + bonusAttack;
+
+            if (attack > player.Armour)
+            {
+                int attackDamage = random.Next(1, Equipped.Damage);
+                player.Health -= attackDamage;
+            }
+            else
+            {
+                Console.WriteLine("Attack Missed");
+            }
         }
     }
 }

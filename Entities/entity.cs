@@ -12,6 +12,7 @@ namespace DungeonCrawler{
         public int Level { get; set; }
         public int XP { get; set; }
         public int Gold { get; set; }
+        public Weapons Equipped { get; set; }
         public string Specie { get; protected set; }
         public string Class { get; protected set; }
         public string Size { get; protected set;}

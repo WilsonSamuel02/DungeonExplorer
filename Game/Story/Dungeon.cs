@@ -104,9 +104,6 @@ namespace Dungeoncrawler
                         }
                         else if (userInput.ToLower() == "leave"){
                             Console.WriteLine("You decided to leave and live another day!");
-                            gameState = (int)States.EXIT_MENU;
-
-                            return gameState;
                         }
                         else{
                             Console.WriteLine("That is not an option!");
@@ -125,7 +122,7 @@ namespace Dungeoncrawler
                 {
                     Console.WriteLine("-- What would you like to do? --");
                     Console.WriteLine();
-                    Console.WriteLine("- 'Attack' enemies")
+                    Console.WriteLine("- 'Attack' enemies");
                     Console.WriteLine("- Go to 'next room'");
                     Console.WriteLine("- Get own 'description'");
                     Console.WriteLine("- Access 'Inventory'");
@@ -143,15 +140,15 @@ namespace Dungeoncrawler
                            foreach (Enemy enemy in enemies)
                            {
                                 Console.WriteLine($"- Level {enemy.Level} {enemy}");
-                           } 
+                           }
 
-                           Console.WriteLine("-- Which would you like to do? --")
-                           Console.WriteLine();
-                           Console.WriteLine("- 'Attack'");
-                           Console.WriteLine("- 'Defend'");
-                           Console.WriteLine("- 'Heal'");
-                           Console.WriteLine("- 'Run'");
-                           string userInput = Console.ReadLine();
+                            Console.WriteLine("-- Which would you like to do? --");
+                            Console.WriteLine();
+                            Console.WriteLine("- 'Attack'");
+                            Console.WriteLine("- 'Defend'");
+                            Console.WriteLine("- 'Heal'");
+                            Console.WriteLine("- 'Run'");
+                            userInput = Console.ReadLine();
 
                            if (userInput.ToLower() == "attack")
                            {
@@ -161,7 +158,6 @@ namespace Dungeoncrawler
                            {
 
                            }
-                           else if
                         }
                         if (userInput.ToLower() == "next room")
                         {
@@ -183,9 +179,6 @@ namespace Dungeoncrawler
                         else if (userInput.ToLower() == "leave")
                         {
                             Console.WriteLine("You decided to leave and live another day!");
-                            gameState = (int)States.EXIT_MENU;
-
-                            return gameState;
                         }
                         else
                         {
@@ -213,17 +206,18 @@ namespace Dungeoncrawler
 
                 if (enemyPercent <= 5)
                 {
-                    enemies.Add(new Goblin());
+                    //enemies.Add(new Goblin());
                 }
                 else if (enemyPercent <= 10 && enemyPercent > 5)
                 {
-                    enemies.Add(new GoblinArcher());
+                    //enemies.Add(new GoblinArcher());
                 }
                 else if (enemyPercent <= 15 && enemyPercent > 10)
                 {
-                    enemies.Add(new GoblinMage());
+                    //enemies.Add(new GoblinMage());
                 }
             }
+            return enemies;
         }
     }
 }

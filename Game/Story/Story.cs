@@ -290,7 +290,7 @@ namespace DungeonCrawler
                 }
                 else if (userInput.ToLower() == "dungeon")
                 {
-                    Dungeon.DungeonGenerator();
+                    Dungeon.DungeonGenerator(player);
                 }
             }
         }

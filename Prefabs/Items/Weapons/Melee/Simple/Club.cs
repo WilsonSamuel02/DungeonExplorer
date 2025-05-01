@@ -16,7 +16,7 @@ namespace DungeonCrawler
             SellAmount = 5;
             DamageType = "Bludgeoning";
             WeaponProperties = new List<string> { "Light", "Slow" };
-            Damage = new List<string> { "d4", "1" };
+            Damage = 4;
         }
     }
 }

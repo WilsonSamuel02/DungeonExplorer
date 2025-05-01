@@ -11,13 +11,13 @@ namespace DungeonCrawler
 
         public string DamageType { get; protected set; }
         public List<string> WeaponProperties { get; protected set; }
-        public List<string> Damage {  get; protected set; }
+        public int Damage {  get; protected set; }
 
         public Weapons() : base()
         {
             DamageType = "No Damage Type";
             WeaponProperties = new List<string> { "N/A" };
-            Damage = new List<string> { "N/A" };
+            Damage = 0;
         }
     }
 }
