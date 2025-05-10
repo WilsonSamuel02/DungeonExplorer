@@ -43,14 +43,79 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Game.cs" />
-    <Compile Include="Player.cs" />
+    <Compile Include="Combat System\CombatSystem.cs" />
+    <Compile Include="Combat System\IEnemyAttack.cs" />
+    <Compile Include="Combat System\IPlayerAtatck.cs" />
+    <Compile Include="Combat System\ProficiencyBonus.cs" />
+    <Compile Include="Game\CharacterCreation.cs" />
+    <Compile Include="Game\Story\Dungeon.cs" />
+    <Compile Include="Game\Story\ShopNCPs\Merchant.cs" />
+    <Compile Include="Game\Story\ShopNPC.cs" />
+    <Compile Include="Game\Story\Story.cs" />
+    <Compile Include="Map\MapGenerator.cs" />
+    <Compile Include="Map\Rooms\BeginningRoom.cs" />
+    <Compile Include="Map\Rooms\MerchantRoom.cs" />
+    <Compile Include="Map\Rooms\NormalRoom.cs" />
+    <Compile Include="Map\Rooms\SafeRoom.cs" />
+    <Compile Include="Prefabs\Bosses\Arclight Phoenix\ArclightPhoenix.cs" />
+    <Compile Include="Prefabs\Bosses\Bahamut\Bahamut.cs" />
+    <Compile Include="Prefabs\Bosses\Baphomet\Baphomet.cs" />
+    <Compile Include="Prefabs\Bosses\Basilisk\Basilisk.cs" />
+    <Compile Include="Prefabs\Bosses\Chimera\Chimera.cs" />
+    <Compile Include="Prefabs\Bosses\Colossus\Colossus.cs" />
+    <Compile Include="Prefabs\Bosses\Eldrich Lich\EldrichLich.cs" />
+    <Compile Include="Prefabs\Bosses\Goblin Chiefton\GoblinChiefton.cs" />
+    <Compile Include="Prefabs\Bosses\Hydra\Hydra.cs" />
+    <Compile Include="Prefabs\Bosses\Jabberwock\Jabberwock.cs" />
+    <Compile Include="Prefabs\Bosses\Manticore\Manticore.cs" />
+    <Compile Include="Prefabs\Bosses\Oni\Oni.cs" />
+    <Compile Include="Prefabs\Bosses\Orc War Chief\OrcWarChief.cs" />
+    <Compile Include="Prefabs\Bosses\Tiamat\Tiamat.cs" />
+    <Compile Include="Prefabs\Bosses\Vampire Lord\VampireLord.cs" />
+    <Compile Include="Entities\Entity Features\IHealth.cs" />
+    <Compile Include="Entities\Entity Features\Species.cs" />
+    <Compile Include="Entities\Main Entities\Enemy.cs" />
+    <Compile Include="Map\BaseRoom.cs" />
+    <Compile Include="Prefabs\Items\Armor\Armor.cs" />
+    <Compile Include="Prefabs\Items\Crafting Equipment\CraftingEquipment.cs" />
+    <Compile Include="Prefabs\Items\Food\Cobs.cs" />
+    <Compile Include="Prefabs\Items\Food\Food.cs" />
+    <Compile Include="Prefabs\Items\Gear\Gear.cs" />
+    <Compile Include="Prefabs\Items\Item.cs" />
+    <Compile Include="Prefabs\Items\Magic Items\MagicItems.cs" />
+    <Compile Include="Prefabs\Items\Potions\Potions.cs" />
+    <Compile Include="Prefabs\Items\Quest Items\QuestItems.cs" />
+    <Compile Include="Prefabs\Items\Weapons\Melee\Simple\Club.cs" />
+    <Compile Include="Prefabs\Items\Weapons\Melee\Simple\Dagger.cs" />
+    <Compile Include="Prefabs\Items\Weapons\Melee\Simple\FryingPan.cs" />
+    <Compile Include="Prefabs\Items\Weapons\Melee\Simple\Handaxe.cs" />
+    <Compile Include="Prefabs\Items\Weapons\Melee\Simple\Javelin.cs" />
+    <Compile Include="Prefabs\Items\Weapons\Ranged\Simple\LightCrossbow.cs" />
+    <Compile Include="Prefabs\Items\Weapons\Ranged\Simple\ShortBow.cs" />
+    <Compile Include="Prefabs\Items\Weapons\Weapons.cs" />
+    <Compile Include="Prefabs\Magic\Magic.cs" />
+    <Compile Include="Prefabs\Magic\Spells\Spell.cs" />
+    <Compile Include="Prefabs\Monsters\Goblin.cs" />
+    <Compile Include="Prefabs\Monsters\GoblinArcher.cs" />
+    <Compile Include="Prefabs\Monsters\GoblinMage.cs" />
     <Compile Include="Program.cs" />
+    <Compile Include="Entities\Entity.cs" />
+    <Compile Include="Entities\Main Entities\Player.cs" />
+    <Compile Include="Game\game.cs" />
+    <Compile Include="Game\gameLoop.cs" />
+    <Compile Include="Game\gameStates.cs" />
+    <Compile Include="Menu\menu.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Room.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Combat System\Spells\" />
+    <Folder Include="Game\Music\" />
+    <Folder Include="Prefabs\Items\Weapons\Melee\Martial\" />
+    <Folder Include="Prefabs\Items\Weapons\Ranged\Ammunition\" />
+    <Folder Include="Prefabs\Items\Weapons\Ranged\Martial\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
